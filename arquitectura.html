@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudio Forma — Arquitectura & Diseño</title>
+<meta name="description" content="Estudio de arquitectura especializado en diseño residencial, comercial y proyectos de interiores en Buenos Aires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────── */
+:root{
+  --negro:#0F0F0F;
+  --gris-oscuro:#1C1C1C;
+  --gris-medio:#3A3A3A;
+  --gris:#6B6B6B;
+  --gris-claro:#ADADAD;
+  --borde:#E0E0E0;
+  --fondo:#F8F7F5;
+  --fondo2:#F0EDE8;
+  --blanco:#FFFFFF;
+  --acento:#C8A96E;
+  --radius:2px;
+}
+
+/* ── RESET ──────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--fondo);color:var(--negro);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:72px;
+  background:rgba(15,15,15,.92);
+  backdrop-filter:blur(20px);
+  transition:background .3s;
+}
+nav.light{background:rgba(248,247,245,.95);border-bottom:1px solid var(--borde)}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--blanco);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}
+nav.light .nav-brand{color:var(--negro)}
+.nav-links{display:flex;align-items:center;gap:2.5rem}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
+nav.light .nav-links a{color:var(--gris)}
+.nav-links a:hover{color:var(--acento)!important}
+.nav-cta{
+  border:1px solid rgba(200,169,110,.6);
+  color:var(--acento)!important;
+  padding:.45rem 1.2rem;
+  border-radius:var(--radius);
+  transition:all .2s!important;
+}
+.nav-cta:hover{background:var(--acento);color:var(--negro)!important;border-color:var(--acento)}
+.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--blanco);transition:.3s}
+nav.light .hamburger span{background:var(--negro)}
+
+/* ── HERO ───────────────────────────────────── */
+#inicio{position:relative;height:100vh;overflow:hidden}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{
+  position:absolute;inset:0;
+  opacity:0;transition:opacity 1.2s ease;
+}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.55)}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(15,15,15,.6) 0%,transparent 60%),
+             linear-gradient(to top,rgba(15,15,15,.4) 0%,transparent 50%);
+}
+.hero-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 6% 8%;
+  max-width:800px;
+}
+.hero-eyebrow{
+  font-size:.72rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--acento);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--acento)}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  font-weight:300;line-height:1.05;
+  letter-spacing:-.01em;color:var(--blanco);
+  margin-bottom:1.5rem;
+}
+h1 em{font-style:italic;font-weight:300}
+.hero-sub{
+  font-size:1rem;color:rgba(255,255,255,.65);
+  max-width:500px;margin-bottom:2.5rem;line-height:1.8;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  background:var(--acento);color:var(--negro);
+  padding:.8rem 2rem;border-radius:var(--radius);
+  font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,169,110,.3)}
+.btn-ghost{
+  color:rgba(255,255,255,.8);text-decoration:none;
+  font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:.5rem;
+  border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:var(--acento);border-color:var(--acento)}
+.btn-ghost svg,.btn-primary svg{width:14px;height:14px}
+
+/* Hero slider dots */
+.hero-dots{
+  position:absolute;right:6%;bottom:8%;
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.hero-dot{
+  width:2px;height:24px;background:rgba(255,255,255,.3);
+  cursor:pointer;transition:background .3s,height .3s;
+  border-radius:1px;
+}
+.hero-dot.active{background:var(--acento);height:40px}
+
+/* Hero counter */
+.hero-counter{
+  position:absolute;right:6%;top:50%;transform:translateY(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;font-weight:300;color:rgba(255,255,255,.08);
+  line-height:1;pointer-events:none;
+  transition:opacity .5s;
+}
+
+/* ── STATS BAR ──────────────────────────────── */
+.stats-bar{
+  background:var(--negro);
+  display:flex;
+}
+.stat-item{
+  flex:1;padding:2rem;
+  border-right:1px solid rgba(255,255,255,.06);
+  text-align:center;
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.8rem;font-weight:300;color:var(--blanco);
+  display:block;line-height:1;margin-bottom:.3rem;
+}
+.stat-num em{font-style:normal;color:var(--acento)}
+.stat-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* ── SECCIONES ──────────────────────────────── */
+section{padding:100px 6%}
+.section-label{
+  font-size:.68rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--acento);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.section-label::after{content:'';display:block;width:24px;height:1px;background:var(--acento)}
+h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.8rem);
+  font-weight:300;line-height:1.1;
+  letter-spacing:-.01em;color:var(--negro);
+  margin-bottom:1rem;
+}
+h2 em{font-style:italic}
+
+/* ── PROYECTOS ──────────────────────────────── */
+#proyectos{background:var(--fondo);padding-top:100px}
+.proy-header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:4rem}
+.proy-header p{color:var(--gris);line-height:1.8;font-size:.95rem}
+.proy-header-right{display:flex;justify-content:flex-end;align-items:flex-end;gap:.5rem}
+.filter-btn{
+  padding:.4rem 1rem;
+  border:1px solid var(--borde);background:transparent;
+  color:var(--gris);font-family:'Inter',sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;border-radius:var(--radius);
+}
+.filter-btn:hover,.filter-btn.active{background:var(--negro);border-color:var(--negro);color:var(--blanco)}
+
+.proy-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+.proy-card{position:relative;overflow:hidden;cursor:pointer;background:var(--fondo2)}
+.proy-card.col-8{grid-column:span 8}
+.proy-card.col-4{grid-column:span 4}
+.proy-card.col-6{grid-column:span 6}
+
+.proy-thumb{
+  position:relative;overflow:hidden;
+  aspect-ratio:4/3;
+}
+.proy-card.col-8 .proy-thumb{aspect-ratio:16/9}
+.proy-thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s ease,filter .6s ease;
+  filter:grayscale(20%);
+}
+.proy-card:hover .proy-thumb img{transform:scale(1.05);filter:grayscale(0%)}
+.proy-info{
+  padding:1.2rem 1.4rem 1.4rem;
+  background:var(--blanco);
+  border-top:2px solid transparent;
+  transition:border-color .3s;
+}
+.proy-card:hover .proy-info{border-color:var(--acento)}
+.proy-cat{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--acento);margin-bottom:.3rem}
+.proy-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--negro);margin-bottom:.2rem}
+.proy-loc{font-size:.8rem;color:var(--gris);display:flex;align-items:center;gap:.3rem}
+.proy-loc svg{width:12px;height:12px}
+.proy-overlay{
+  position:absolute;inset:0;
+  background:rgba(15,15,15,.7);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s;
+}
+.proy-card:hover .proy-overlay{opacity:1}
+.proy-overlay-btn{
+  border:1px solid rgba(255,255,255,.6);color:var(--blanco);
+  padding:.6rem 1.4rem;font-size:.78rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  background:transparent;cursor:pointer;
+  transition:all .2s;
+}
+.proy-overlay-btn:hover{background:var(--acento);border-color:var(--acento);color:var(--negro)}
+
+/* ── SERVICIOS ──────────────────────────────── */
+#servicios{background:var(--negro)}
+#servicios .section-label{color:rgba(200,169,110,.7)}
+#servicios .section-label::after{background:rgba(200,169,110,.4)}
+#servicios h2{color:var(--blanco)}
+#servicios h2 em{color:var(--acento)}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:4rem;
+  border:1px solid rgba(255,255,255,.06);
+}
+.svc-card{
+  padding:2.5rem 2rem;
+  border-right:1px solid rgba(255,255,255,.06);
+  transition:background .3s;
+  position:relative;overflow:hidden;
+}
+.svc-card:last-child{border-right:none}
+.svc-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--acento);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.svc-card:hover{background:rgba(255,255,255,.03)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:300;color:rgba(255,255,255,.06);
+  line-height:1;margin-bottom:1.5rem;
+}
+.svc-icon{color:var(--acento);margin-bottom:1rem}
+.svc-icon svg{width:28px;height:28px}
+.svc-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:600;color:var(--blanco);
+  margin-bottom:.7rem;
+}
+.svc-card p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8}
+
+/* ── PROCESO ────────────────────────────────── */
+#proceso{background:var(--fondo2)}
+.proc-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:0;margin-top:4rem;position:relative;
+}
+.proc-grid::before{
+  content:'';position:absolute;
+  top:32px;left:10%;right:10%;height:1px;
+  background:var(--borde);z-index:0;
+}
+.proc-step{text-align:center;position:relative;z-index:1;padding:0 1rem}
+.proc-circle{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--blanco);border:1px solid var(--borde);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:600;color:var(--negro);
+  transition:background .3s,border-color .3s;
+}
+.proc-step:hover .proc-circle{background:var(--negro);border-color:var(--negro);color:var(--acento)}
+.proc-step h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--negro);margin-bottom:.5rem}
+.proc-step p{font-size:.82rem;color:var(--gris);line-height:1.7}
+
+/* ── NOSOTROS ───────────────────────────────── */
+#nosotros{
+  background:var(--fondo);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;padding:0;
+}
+.nosotros-img{position:relative;overflow:hidden;min-height:600px}
+.nosotros-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%)}
+.nosotros-content{
+  padding:8% 6%;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--blanco);
+}
+.nosotros-content p{color:var(--gris);line-height:1.9;margin-bottom:1.2rem;font-size:.95rem}
+.nosotros-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5rem;margin-top:2.5rem;
+  padding-top:2rem;border-top:1px solid var(--borde);
+}
+.nos-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--negro);display:block;line-height:1}
+.nos-stat-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-top:.3rem;display:block}
+
+/* ── EQUIPO ─────────────────────────────────── */
+#equipo{background:var(--fondo2)}
+.equipo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem}
+.equipo-card{background:var(--blanco);overflow:hidden}
+.equipo-thumb{
+  height:280px;overflow:hidden;background:var(--fondo);
+  position:relative;
+}
+.equipo-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(30%);transition:filter .3s,transform .3s}
+.equipo-card:hover .equipo-thumb img{filter:grayscale(0%);transform:scale(1.03)}
+.equipo-body{padding:1.2rem}
+.equipo-body h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--negro);margin-bottom:.2rem}
+.equipo-body span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+
+/* ── TESTIMONIOS ────────────────────────────── */
+#testimonios{background:var(--negro)}
+#testimonios .section-label{color:rgba(200,169,110,.7)}
+#testimonios .section-label::after{background:rgba(200,169,110,.4)}
+#testimonios h2{color:var(--blanco);margin-bottom:3rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi-card{
+  padding:2rem;
+  border:1px solid rgba(255,255,255,.06);
+  position:relative;
+  transition:border-color .3s;
+}
+.testi-card:hover{border-color:rgba(200,169,110,.3)}
+.testi-quote-mark{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;line-height:1;color:var(--acento);opacity:.25;
+  position:absolute;top:1rem;right:1.5rem;
+}
+.testi-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;font-weight:300;
+  color:rgba(255,255,255,.7);line-height:1.8;
+  margin-bottom:1.5rem;
+}
+.testi-author{display:flex;align-items:center;gap:.8rem}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--acento);font-weight:600;font-size:.85rem;flex-shrink:0;
+}
+.testi-name{font-weight:600;color:var(--blanco);font-size:.88rem}
+.testi-role{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:.1rem}
+
+/* ── CONTACTO ───────────────────────────────── */
+#contacto{background:var(--fondo);padding:100px 6%}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start}
+.contact-left p{color:var(--gris);line-height:1.9;margin:1rem 0 2rem;font-size:.95rem}
+.contact-data{display:flex;flex-direction:column;gap:1rem}
+.cdata{display:flex;align-items:center;gap:.8rem;color:var(--gris);font-size:.88rem}
+.cdata svg{width:16px;height:16px;color:var(--acento);flex-shrink:0}
+.cdata a{color:var(--gris);text-decoration:none;transition:color .2s}
+.cdata a:hover{color:var(--acento)}
+
+.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--negro)}
+.form-group input,.form-group select,.form-group textarea{
+  border:none;border-bottom:1px solid var(--borde);
+  padding:.6rem 0;background:transparent;
+  font-family:'Inter',sans-serif;font-size:.95rem;color:var(--negro);
+  outline:none;transition:border-color .2s;
+  border-radius:0;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--acento)}
+.form-group textarea{resize:none;min-height:100px}
+.btn-submit{
+  background:var(--negro);color:var(--blanco);
+  border:none;padding:.9rem 2rem;
+  font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;display:inline-flex;align-items:center;gap:.6rem;
+  transition:background .2s,transform .2s;align-self:flex-start;
+}
+.btn-submit:hover{background:var(--acento);color:var(--negro);transform:translateY(-2px)}
+.btn-submit svg{width:14px;height:14px}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer{background:var(--gris-oscuro);padding:3rem 6% 1.5rem}
+.ft-top{display:flex;justify-content:space-between;align-items:start;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--blanco);letter-spacing:.08em;text-transform:uppercase}
+.ft-brand-sub{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acento);margin-top:.2rem}
+.ft-brand p{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px;margin-top:.8rem}
+.ft-links{display:flex;gap:3rem}
+.ft-col h5{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1rem}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:.5rem}
+.ft-col ul a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.85rem;transition:color .2s}
+.ft-col ul a:hover{color:var(--acento)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.ft-bottom p{font-size:.75rem;color:rgba(255,255,255,.2)}
+.ft-bottom a{font-size:.75rem;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s}
+.ft-bottom a:hover{color:var(--acento)}
+
+/* ── REVEAL ─────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── MOBILE ─────────────────────────────────── */
+@media(max-width:1100px){
+  .proy-card.col-8{grid-column:span 12}
+  .proy-card.col-4{grid-column:span 6}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-card{border-bottom:1px solid rgba(255,255,255,.06)}
+  .equipo-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  #nosotros{grid-template-columns:1fr}
+  .nosotros-img{min-height:340px}
+  .contact-wrap{grid-template-columns:1fr;gap:3rem}
+  .proy-header{grid-template-columns:1fr}
+  .proy-header-right{justify-content:flex-start}
+  .proc-grid{grid-template-columns:repeat(3,1fr)}
+  .proc-grid::before{display:none}
+  .testi-grid{grid-template-columns:1fr}
+  .hamburger{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;top:72px;left:0;right:0;
+    background:rgba(15,15,15,.98);
+    padding:2rem;gap:1.5rem;
+    border-bottom:1px solid rgba(255,255,255,.06);z-index:99;
+  }
+}
+@media(max-width:600px){
+  section{padding:70px 4%}
+  h1{font-size:clamp(2.5rem,9vw,3.5rem)}
+  h2{font-size:clamp(2rem,7vw,2.8rem)}
+  .stats-bar{flex-wrap:wrap}
+  .stat-item{width:50%;border-bottom:1px solid rgba(255,255,255,.06)}
+  .proy-card.col-4,.proy-card.col-6{grid-column:span 12}
+  .svc-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .equipo-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .ft-top{flex-direction:column}
+  .ft-links{flex-direction:column;gap:1.5rem}
+  .ft-bottom{flex-direction:column;text-align:center}
+  nav{padding:0 4%}
+  .hero-content{padding:0 4% 10%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#inicio" class="nav-brand">Forma</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#proyectos">Proyectos</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Estudio</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=85" alt="Proyecto residencial">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=85" alt="Interior moderno">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=1600&q=85" alt="Arquitectura exterior">
+      <div class="hero-overlay"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Buenos Aires · Arquitectura & Diseño</span>
+    <h1>Espacios que<br><em>transforman</em><br>la vida cotidiana</h1>
+    <p class="hero-sub">Diseñamos y construimos proyectos residenciales, comerciales e interiorismo con foco en la calidad, la funcionalidad y el detalle.</p>
+    <div class="hero-actions">
+      <a href="#proyectos" class="btn-primary">
+        Ver proyectos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#contacto" class="btn-ghost">
+        Consultá tu proyecto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <div class="hero-dot active" onclick="goToSlide(0)"></div>
+    <div class="hero-dot" onclick="goToSlide(1)"></div>
+    <div class="hero-dot" onclick="goToSlide(2)"></div>
+  </div>
+
+  <div class="hero-counter" id="heroCounter">01</div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <span class="stat-num"><em>+</em>120</span>
+    <span class="stat-label">Proyectos realizados</span>
+  </div>
+  <div class="stat-item reveal d1">
+    <span class="stat-num">18</span>
+    <span class="stat-label">Años de experiencia</span>
+  </div>
+  <div class="stat-item reveal d2">
+    <span class="stat-num"><em>+</em>45.000</span>
+    <span class="stat-label">m² construidos</span>
+  </div>
+  <div class="stat-item reveal d3">
+    <span class="stat-num">100<em>%</em></span>
+    <span class="stat-label">Clientes satisfechos</span>
+  </div>
+</div>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="proy-header">
+    <div class="reveal">
+      <span class="section-label">Nuestro trabajo</span>
+      <h2>Proyectos <em>seleccionados</em></h2>
+      <p>Una muestra de nuestros trabajos más recientes en arquitectura residencial, comercial e interiorismo.</p>
+    </div>
+    <div class="proy-header-right reveal d1">
+      <button class="filter-btn active">Todos</button>
+      <button class="filter-btn">Residencial</button>
+      <button class="filter-btn">Comercial</button>
+      <button class="filter-btn">Interiores</button>
+    </div>
+  </div>
+
+  <div class="proy-grid">
+    <div class="proy-card col-8 reveal">
+      <div class="proy-thumb">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80" alt="Casa Palermo">
+        <div class="proy-overlay"><button class="proy-overlay-btn">Ver proyecto</button></div>
+      </div>
+      <div class="proy-info">
+        <div class="proy-cat">Residencial</div>
+        <div class="proy-name">Casa Palermo Norte</div>
+        <div class="proy-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Palermo, CABA · 280 m²
+        </div>
+      </div>
+    </div>
+    <div class="proy-card col-4 reveal d1">
+      <div class="proy-thumb">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Oficinas Microcentro">
+        <div class="proy-overlay"><button class="proy-overlay-btn">Ver proyecto</button></div>
+      </div>
+      <div class="proy-info">
+        <div class="proy-cat">Comercial</div>
+        <div class="proy-name">Oficinas Catalinas</div>
+        <div class="proy-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Microcentro · 850 m²
+        </div>
+      </div>
+    </div>
+    <div class="proy-card col-4 reveal">
+      <div class="proy-thumb">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Interior Recoleta">
+        <div class="proy-overlay"><button class="proy-overlay-btn">Ver proyecto</button></div>
+      </div>
+      <div class="proy-info">
+        <div class="proy-cat">Interiores</div>
+        <div class="proy-name">Depto. Recoleta</div>
+        <div class="proy-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Recoleta · 120 m²
+        </div>
+      </div>
+    </div>
+    <div class="proy-card col-4 reveal d1">
+      <div class="proy-thumb">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Casa Nordelta">
+        <div class="proy-overlay"><button class="proy-overlay-btn">Ver proyecto</button></div>
+      </div>
+      <div class="proy-info">
+        <div class="proy-cat">Residencial</div>
+        <div class="proy-name">Vivienda Nordelta</div>
+        <div class="proy-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Nordelta · 380 m²
+        </div>
+      </div>
+    </div>
+    <div class="proy-card col-4 reveal d2">
+      <div class="proy-thumb">
+        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80" alt="Restaurante">
+        <div class="proy-overlay"><button class="proy-overlay-btn">Ver proyecto</button></div>
+      </div>
+      <div class="proy-info">
+        <div class="proy-cat">Comercial</div>
+        <div class="proy-name">Restaurante Palermo</div>
+        <div class="proy-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Palermo · 320 m²
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="reveal" style="max-width:600px">
+    <span class="section-label">Qué hacemos</span>
+    <h2>Servicios de <em>arquitectura</em> y diseño</h2>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Arquitectura Residencial</h3>
+      <p>Diseño y construcción de viviendas unifamiliares, dúplex y ampliaciones. Cada proyecto, único y personalizado.</p>
+    </div>
+    <div class="svc-card reveal d1">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </div>
+      <h3>Arquitectura Comercial</h3>
+      <p>Oficinas, locales, restaurantes y espacios de trabajo diseñados para potenciar la identidad de cada marca.</p>
+    </div>
+    <div class="svc-card reveal d2">
+      <div class="svc-num">03</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <h3>Diseño de Interiores</h3>
+      <p>Ambientación completa de espacios residenciales y comerciales. Materiales, mobiliario y paletas de color a medida.</p>
+    </div>
+    <div class="svc-card reveal d3">
+      <div class="svc-num">04</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+      </div>
+      <h3>Dirección de Obra</h3>
+      <p>Supervisión técnica y administrativa de obras propias o de terceros. Control de calidad, plazos y presupuestos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+    <span class="section-label" style="justify-content:center">Cómo trabajamos</span>
+    <h2>Un proceso <em>claro</em> y transparente</h2>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-step reveal">
+      <div class="proc-circle">01</div>
+      <h4>Consulta inicial</h4>
+      <p>Reunión gratuita para entender el proyecto, necesidades y presupuesto disponible.</p>
+    </div>
+    <div class="proc-step reveal d1">
+      <div class="proc-circle">02</div>
+      <h4>Anteproyecto</h4>
+      <p>Primeras ideas, bocetos y propuestas conceptuales para validar la dirección del diseño.</p>
+    </div>
+    <div class="proc-step reveal d2">
+      <div class="proc-circle">03</div>
+      <h4>Proyecto ejecutivo</h4>
+      <p>Planos, memorias descriptivas y documentación técnica completa para la obra.</p>
+    </div>
+    <div class="proc-step reveal d3">
+      <div class="proc-circle">04</div>
+      <h4>Construcción</h4>
+      <p>Ejecución con materiales de primera calidad y supervisión permanente en obra.</p>
+    </div>
+    <div class="proc-step reveal d4">
+      <div class="proc-circle">05</div>
+      <h4>Entrega</h4>
+      <p>Presentación formal del proyecto terminado con garantía de obra y soporte post-entrega.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" style="padding:0">
+  <div class="nosotros-img">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Estudio Forma">
+  </div>
+  <div class="nosotros-content">
+    <span class="section-label">El estudio</span>
+    <h2>Diseño con <em>propósito</em></h2>
+    <p>Forma nació en 2006 de la convicción de que la arquitectura tiene el poder de mejorar la vida de las personas. No diseñamos edificios: diseñamos experiencias.</p>
+    <p>Trabajamos con un equipo reducido y multidisciplinario que garantiza dedicación total a cada proyecto. Sin intermediarios, sin burocracia innecesaria.</p>
+    <p>Cada obra que firmamos refleja nuestra búsqueda permanente de equilibrio entre estética, función y sustentabilidad.</p>
+    <div class="nosotros-stats">
+      <div>
+        <span class="nos-stat-num">+120</span>
+        <span class="nos-stat-label">Proyectos entregados</span>
+      </div>
+      <div>
+        <span class="nos-stat-num">18 años</span>
+        <span class="nos-stat-label">En el mercado</span>
+      </div>
+      <div>
+        <span class="nos-stat-num">+45.000</span>
+        <span class="nos-stat-label">m² construidos</span>
+      </div>
+      <div>
+        <span class="nos-stat-num">8</span>
+        <span class="nos-stat-label">Profesionales</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+  <div class="reveal" style="max-width:600px;margin-bottom:4rem">
+    <span class="section-label">Las personas</span>
+    <h2>Nuestro <em>equipo</em></h2>
+  </div>
+  <div class="equipo-grid">
+    <div class="equipo-card reveal">
+      <div class="equipo-thumb">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Director">
+      </div>
+      <div class="equipo-body">
+        <h3>Arq. Martín Solá</h3>
+        <span>Director & Fundador</span>
+      </div>
+    </div>
+    <div class="equipo-card reveal d1">
+      <div class="equipo-thumb">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Proyectos">
+      </div>
+      <div class="equipo-body">
+        <h3>Arq. Valeria Ríos</h3>
+        <span>Directora de Proyectos</span>
+      </div>
+    </div>
+    <div class="equipo-card reveal d2">
+      <div class="equipo-thumb">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Obras">
+      </div>
+      <div class="equipo-body">
+        <h3>Arq. Diego Méndez</h3>
+        <span>Jefe de Obras</span>
+      </div>
+    </div>
+    <div class="equipo-card reveal d3">
+      <div class="equipo-thumb">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Interiores">
+      </div>
+      <div class="equipo-body">
+        <h3>Dis. Laura Vega</h3>
+        <span>Diseño de Interiores</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="reveal" style="max-width:600px;margin-bottom:3rem">
+    <span class="section-label">Lo que dicen</span>
+    <h2>Clientes que <em>confían</em> en nosotros</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">"El proceso fue impecable desde el primer boceto hasta la entrega. Martín y su equipo entendieron exactamente lo que buscábamos y lo superaron. Nuestra casa es exactamente lo que soñamos."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">CP</div>
+        <div>
+          <div class="testi-name">Carlos y Paula Montes</div>
+          <div class="testi-role">Vivienda unifamiliar · Palermo</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d1">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">"Contraté a Forma para el diseño de nuestras oficinas y el resultado fue extraordinario. El espacio mejoró notablemente el ambiente de trabajo y recibimos comentarios de todos los clientes que nos visitan."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MF</div>
+        <div>
+          <div class="testi-name">Marcelo Fernández</div>
+          <div class="testi-role">CEO · Oficinas Catalinas</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">"Lo que más valoro es la transparencia. Desde el primer día tuve claro el presupuesto, los plazos y los materiales. Cero sorpresas. La dirección de obra fue profesional y puntual."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SL</div>
+        <div>
+          <div class="testi-name">Sofía López</div>
+          <div class="testi-role">Reforma integral · Recoleta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-wrap">
+    <div class="contact-left reveal">
+      <span class="section-label">Hablemos</span>
+      <h2>¿Tenés un <em>proyecto</em> en mente?</h2>
+      <p>La primera reunión es gratuita y sin compromiso. Contanos tu idea y te damos una respuesta en 24hs.</p>
+      <div class="contact-data">
+        <div class="cdata">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+          <a href="https://wa.me/5491100000000">+54 11 0000-0000</a>
+        </div>
+        <div class="cdata">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="mailto:hola@estudioforma.com.ar">hola@estudioforma.com.ar</a>
+        </div>
+        <div class="cdata">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Honduras 4800, Piso 2 — Palermo, CABA</span>
+        </div>
+        <div class="cdata">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Lunes a Viernes · 9 a 18hs</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal d1">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre completo">
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="+54 11...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com">
+      </div>
+      <div class="form-group">
+        <label>Tipo de proyecto</label>
+        <select>
+          <option value="">Seleccioná una opción...</option>
+          <option>Vivienda nueva</option>
+          <option>Ampliación o reforma</option>
+          <option>Local o restaurante</option>
+          <option>Oficinas</option>
+          <option>Diseño de interiores</option>
+          <option>Dirección de obra</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Contanos tu proyecto</label>
+        <textarea placeholder="Ubicación, m² aproximados, presupuesto estimado, plazo..."></textarea>
+      </div>
+      <button class="btn-submit">
+        Enviar consulta
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-brand-name">Forma</div>
+      <div class="ft-brand-sub">Arquitectura & Diseño</div>
+      <p>Espacios que transforman la vida cotidiana. Buenos Aires, desde 2006.</p>
+    </div>
+    <div class="ft-links">
+      <div class="ft-col">
+        <h5>Estudio</h5>
+        <ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Arquitectura residencial</a></li>
+          <li><a href="#servicios">Arquitectura comercial</a></li>
+          <li><a href="#servicios">Diseño de interiores</a></li>
+          <li><a href="#servicios">Dirección de obra</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="#">+54 11 0000-0000</a></li>
+          <li><a href="#">hola@estudioforma.com.ar</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Estudio Forma · Buenos Aires, Argentina</p>
+    <a href="#">Política de privacidad</a>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > window.innerHeight - 100) {
+    nav.classList.add('light');
+  } else {
+    nav.classList.remove('light');
+  }
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Hero slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+const counter = document.getElementById('heroCounter');
+
+function goToSlide(idx) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = idx;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+  counter.textContent = String(currentSlide + 1).padStart(2, '0');
+}
+
+setInterval(() => {
+  goToSlide((currentSlide + 1) % slides.length);
+}, 5000);
+
+// Reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Form submit
+document.querySelector('.btn-submit').addEventListener('click', function() {
+  const original = this.innerHTML;
+  this.textContent = '✓ Consulta enviada';
+  this.style.background = '#C8A96E';
+  this.style.color = '#0F0F0F';
+  setTimeout(() => {
+    this.innerHTML = original;
+    this.style.background = '';
+    this.style.color = '';
+  }, 3000);
+});
+</script>
+</body>
+</html>
