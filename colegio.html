@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio San Andrés — Educación de Excelencia</title>
+<meta name="description" content="Colegio privado bilingüe en Buenos Aires. Educación integral, valores sólidos y formación para el mundo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,300;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1B3A6B;--azul2:#142D54;--azul-claro:#E8EFF8;--azul-mid:#3A6BC9;
+  --verde:#2E7D5E;--crema:#FDFAF5;--arena:#F5F0E6;--negro:#0F1B2D;
+  --gris:#607080;--borde:#E2E8F0;--blanco:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--crema);color:var(--negro);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(253,250,245,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--borde);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(27,58,107,.08)}
+.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-em{width:38px;height:38px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--blanco)}
+.nav-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--azul);line-height:1.1}
+.nav-name small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gris)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{color:var(--gris);text-decoration:none;font-size:.84rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--azul)}
+.nav-cta{background:var(--azul);color:var(--blanco)!important;padding:.5rem 1.3rem;border-radius:50px;font-weight:600!important;font-size:.8rem!important;transition:background .2s,box-shadow .2s!important}
+.nav-cta:hover{background:var(--azul2)!important;box-shadow:0 4px 16px rgba(27,58,107,.25)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--azul);border-radius:2px;transition:.3s}
+
+/* HERO */
+#inicio{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding-top:72px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=85') center/cover no-repeat;transform:scale(1.04);animation:heroZoom 7s ease forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,45,.92) 0%,rgba(15,27,45,.45) 50%,rgba(15,27,45,.2) 100%)}
+.hero-content{position:relative;z-index:1;width:100%;padding:4% 5% 5%}
+.hero-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s .2s ease forwards}
+.hero-eyebrow svg{width:14px;height:14px}
+h1{font-family:'Fraunces',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:300;line-height:1.06;color:var(--blanco);margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}
+h1 em{font-style:italic;color:rgba(255,255,255,.5)}
+h1 strong{font-weight:600}
+.hero-desc{font-size:.95rem;color:rgba(255,255,255,.5);max-width:480px;line-height:1.85;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .5s ease forwards}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .65s ease forwards}
+.btn-blanco{background:var(--blanco);color:var(--azul);padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .2s}
+.btn-blanco:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.2)}
+.btn-blanco svg{width:14px;height:14px}
+.btn-ghost-blanco{border:1.5px solid rgba(255,255,255,.3);color:var(--blanco);padding:.8rem 1.6rem;border-radius:50px;font-weight:500;font-size:.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:border-color .2s,background .2s}
+.btn-ghost-blanco:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.08)}
+.hero-right-stats{display:flex;flex-direction:column;gap:.8rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-stat{background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1rem 1.3rem;display:flex;align-items:center;gap:.9rem;transition:background .2s}
+.hero-stat:hover{background:rgba(255,255,255,.12)}
+.hero-stat-icon{width:40px;height:40px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--blanco);flex-shrink:0}
+.hero-stat-icon svg{width:18px;height:18px}
+.hero-stat-num{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;color:var(--blanco);line-height:1;display:block}
+.hero-stat-label{font-size:.68rem;color:rgba(255,255,255,.4);letter-spacing:.05em;display:block;margin-top:.1rem}
+/* Bottom strip */
+.hero-strip{
+  display:flex;gap:0;border-top:1px solid rgba(255,255,255,.08);
+  opacity:0;animation:fadeUp .6s .8s ease forwards;
+}
+.hero-strip-item{flex:1;padding:1.2rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.hero-strip-item:last-child{border-right:none}
+.hero-strip-num{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:300;color:var(--blanco);display:block;line-height:1}
+.hero-strip-label{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.2rem;display:block}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* PROPUESTA */
+#propuesta{background:var(--blanco);padding:80px 5%}
+.section-tag{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--azul-mid);margin-bottom:.6rem;display:block}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:var(--negro)}
+h2 em{font-style:italic;color:var(--azul)}
+h2 strong{font-weight:600}
+.prop-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.prop-card{padding:2rem;border-radius:16px;border:1px solid var(--borde);background:var(--crema);transition:transform .3s,box-shadow .3s,border-color .3s}
+.prop-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(27,58,107,.1);border-color:rgba(27,58,107,.15)}
+.prop-card-icon{width:48px;height:48px;border-radius:12px;background:var(--azul-claro);color:var(--azul);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;transition:background .3s,color .3s}
+.prop-card:hover .prop-card-icon{background:var(--azul);color:var(--blanco)}
+.prop-card-icon svg{width:22px;height:22px}
+.prop-card h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;color:var(--negro);margin-bottom:.5rem}
+.prop-card p{font-size:.85rem;color:var(--gris);line-height:1.75}
+
+/* NIVELES */
+#niveles{background:var(--crema);padding:80px 5%}
+.niv-tabs{display:flex;gap:.5rem;margin:2rem 0 2.5rem;flex-wrap:wrap}
+.niv-tab{padding:.55rem 1.3rem;border-radius:50px;border:1.5px solid var(--borde);background:var(--blanco);font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--gris);cursor:pointer;transition:all .2s}
+.niv-tab:hover{border-color:var(--azul);color:var(--azul)}
+.niv-tab.active{background:var(--azul);border-color:var(--azul);color:var(--blanco)}
+.niv-panel{display:none}
+.niv-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.niv-panel-img{border-radius:16px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.niv-panel-img img{width:100%;height:100%;object-fit:cover;display:block}
+.niv-edad-badge{position:absolute;top:1rem;left:1rem;background:var(--blanco);border-radius:50px;padding:.3rem .9rem;font-size:.72rem;font-weight:600;color:var(--azul);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.niv-panel-content h3{font-family:'Fraunces',serif;font-size:2rem;font-weight:300;color:var(--negro);margin-bottom:1rem}
+.niv-panel-content h3 em{font-style:italic;color:var(--azul)}
+.niv-panel-content p{font-size:.92rem;color:var(--gris);line-height:1.85;margin-bottom:1.5rem}
+.niv-feats{display:flex;flex-direction:column;gap:.6rem}
+.niv-feat{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--negro);font-weight:500}
+.niv-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--azul-mid);flex-shrink:0}
+.niv-cta{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-size:.85rem;font-weight:600;color:var(--azul);text-decoration:none;border-bottom:2px solid var(--azul-claro);padding-bottom:2px;transition:border-color .2s}
+.niv-cta:hover{border-color:var(--azul)}
+.niv-cta svg{width:14px;height:14px}
+
+/* VIDA ESCOLAR */
+#vida{background:var(--azul);padding:80px 5%;position:relative;overflow:hidden}
+#vida::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.03);top:-200px;right:-200px;pointer-events:none}
+#vida .section-tag{color:rgba(255,255,255,.35)}
+#vida h2{color:var(--blanco)}
+#vida h2 em{color:rgba(255,255,255,.4)}
+.vida-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.vida-card{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:3/4}
+.vida-card img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.6);transition:transform .5s,filter .4s}
+.vida-card:hover img{transform:scale(1.06);filter:brightness(.8)}
+.vida-card-body{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,27,45,.85) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.vida-card-tag{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.3rem}
+.vida-card-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--blanco);line-height:1.2}
+.vida-card-desc{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:.4rem;line-height:1.5}
+
+/* NÚMEROS */
+.numeros{background:var(--negro);display:grid;grid-template-columns:repeat(4,1fr)}
+.num-item{padding:3rem 2rem;text-align:center;border-right:1px solid rgba(255,255,255,.06);transition:background .2s}
+.num-item:last-child{border-right:none}
+.num-item:hover{background:rgba(255,255,255,.02)}
+.num-val{font-family:'Fraunces',serif;font-size:3rem;font-weight:300;color:var(--blanco);display:block;line-height:1;margin-bottom:.4rem}
+.num-suffix{color:rgba(255,255,255,.3);font-size:2rem}
+.num-label{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* TESTIMONIOS */
+#testimonios{background:var(--blanco);padding:80px 5%}
+.testi-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.testi-rating{display:flex;align-items:center;gap:.8rem;background:var(--crema);padding:.8rem 1.2rem;border-radius:12px;border:1px solid var(--borde)}
+.testi-rating-num{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;color:var(--azul)}
+.testi-rating-stars{display:flex;gap:2px;margin-bottom:.1rem}
+.testi-rating-stars svg{width:13px;height:13px;fill:#F59E0B;color:#F59E0B}
+.testi-rating-label{font-size:.7rem;color:var(--gris)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi-card{padding:1.8rem;border-radius:16px;border:1px solid var(--borde);background:var(--crema);transition:transform .3s,border-color .3s,box-shadow .3s;position:relative}
+.testi-card:hover{transform:translateY(-4px);border-color:rgba(27,58,107,.15);box-shadow:0 12px 32px rgba(27,58,107,.07)}
+.testi-bigquote{font-family:'Fraunces',serif;font-size:4rem;line-height:.8;color:var(--azul-claro);position:absolute;top:1rem;right:1.2rem;pointer-events:none}
+.testi-stars{display:flex;gap:2px;margin-bottom:.8rem}
+.testi-stars svg{width:13px;height:13px;fill:#F59E0B;color:#F59E0B}
+.testi-text{font-size:.87rem;color:var(--gris);line-height:1.8;margin-bottom:1.2rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.7rem;padding-top:1rem;border-top:1px solid var(--borde)}
+.testi-av{width:38px;height:38px;border-radius:50%;background:var(--azul-claro);color:var(--azul);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;flex-shrink:0}
+.testi-name{font-weight:600;color:var(--negro);font-size:.84rem}
+.testi-role{font-size:.7rem;color:var(--gris)}
+
+/* ADMISIONES */
+#admisiones{background:var(--arena);padding:80px 5%}
+.adm-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.adm-left>p{color:var(--gris);font-size:.93rem;line-height:1.85;margin:1rem 0 2rem}
+.adm-steps{display:flex;flex-direction:column}
+.adm-step{display:flex;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--borde);transition:background .2s}
+.adm-step:last-child{border-bottom:none}
+.adm-step-num{width:36px;height:36px;border-radius:50%;background:var(--azul);color:var(--blanco);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:.9rem;font-weight:600;flex-shrink:0;margin-top:.1rem}
+.adm-step h4{font-weight:600;color:var(--negro);font-size:.9rem;margin-bottom:.2rem}
+.adm-step p{font-size:.82rem;color:var(--gris);margin:0;line-height:1.6}
+.adm-form-wrap{background:var(--blanco);border-radius:20px;padding:2.5rem;border:1px solid var(--borde);box-shadow:0 8px 32px rgba(27,58,107,.06)}
+.adm-form-wrap h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:300;color:var(--negro);margin-bottom:.3rem}
+.adm-form-wrap h3 em{font-style:italic;color:var(--azul)}
+.adm-form-wrap>p{font-size:.82rem;color:var(--gris);margin-bottom:1.5rem}
+.adm-form{display:flex;flex-direction:column;gap:.9rem}
+.adm-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.adm-field{display:flex;flex-direction:column;gap:.35rem}
+.adm-field label{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--negro)}
+.adm-field input,.adm-field select{border:1.5px solid var(--borde);border-radius:10px;padding:.72rem 1rem;background:var(--crema);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;color:var(--negro);outline:none;transition:border-color .2s,box-shadow .2s}
+.adm-field input:focus,.adm-field select:focus{border-color:var(--azul-mid);background:var(--blanco);box-shadow:0 0 0 3px rgba(58,107,201,.08)}
+.btn-submit{background:var(--azul);color:var(--blanco);border:none;padding:.95rem;border-radius:50px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.06em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:background .2s,transform .2s,box-shadow .2s}
+.btn-submit:hover{background:var(--azul2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,58,107,.25)}
+.btn-submit svg{width:14px;height:14px}
+.adm-note{font-size:.72rem;color:var(--gris);text-align:center}
+
+/* FOOTER */
+footer{background:var(--negro);padding:4rem 5% 2rem}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.ft-logo{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem}
+.ft-logo-em{width:34px;height:34px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:.9rem;color:var(--blanco);font-weight:600}
+.ft-logo-name{font-family:'Fraunces',serif;font-size:.95rem;color:var(--blanco)}
+.ft-brand p{font-size:.8rem;color:rgba(255,255,255,.28);line-height:1.8;max-width:220px;margin-bottom:.8rem}
+.ft-acred{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:rgba(255,255,255,.2)}
+.ft-acred svg{width:12px;height:12px;color:var(--azul-mid)}
+.ft-col h5{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:1rem}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:.5rem}
+.ft-col ul a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.84rem;transition:color .2s}
+.ft-col ul a:hover{color:var(--blanco)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.ft-bottom p,.ft-bottom a{font-size:.72rem;color:rgba(255,255,255,.18);text-decoration:none}
+.ft-bottom a:hover{color:rgba(255,255,255,.4)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.35s}
+
+/* MOBILE */
+@media(max-width:960px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(253,250,245,.99);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--borde);z-index:99}
+  .hero-top{grid-template-columns:1fr;gap:1.5rem}
+  .hero-right-stats{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  .hero-strip{display:none}
+  .prop-cards{grid-template-columns:1fr}
+  .niv-panel.active{grid-template-columns:1fr;gap:1.5rem}
+  .niv-panel-img{aspect-ratio:16/7}
+  .vida-grid{grid-template-columns:repeat(2,1fr)}
+  .numeros{grid-template-columns:repeat(2,1fr)}
+  .num-item:nth-child(2){border-right:none}
+  .num-item:nth-child(1),.num-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.06)}
+  .testi-header{flex-direction:column;align-items:flex-start}
+  .testi-grid{grid-template-columns:1fr}
+  .adm-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  nav{padding:0 4%}
+  h1{font-size:clamp(2.2rem,7.5vw,3rem)}
+  h2{font-size:clamp(1.7rem,5.5vw,2.2rem)}
+  .hero-content{padding:2rem 4% 3rem}
+  .hero-right-stats{grid-template-columns:1fr 1fr;gap:.6rem}
+  .hero-stat{padding:.8rem .9rem;gap:.6rem}
+  .hero-stat-num{font-size:1.3rem}
+  .hero-stat-label{font-size:.62rem}
+  .hero-btns{flex-direction:column}
+  .hero-btns a{width:100%;justify-content:center;text-align:center}
+  #propuesta,#niveles,#vida,#testimonios,#admisiones{padding:60px 4%}
+  .numeros .num-item{padding:2rem 1rem}
+  .num-val{font-size:2.2rem}
+  .vida-grid{grid-template-columns:1fr 1fr}
+  .adm-row{grid-template-columns:1fr}
+  .adm-form-wrap{padding:1.5rem}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bottom{flex-direction:column;text-align:center;gap:.3rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="#inicio" class="nav-logo">
+    <div class="nav-em">SA</div>
+    <div class="nav-name">Colegio San Andrés<small>Buenos Aires · Desde 1978</small></div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#niveles">Niveles</a>
+    <a href="#vida">Vida escolar</a>
+    <a href="#testimonios">Familias</a>
+    <a href="#admisiones" class="nav-cta">Inscripciones 2026</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-top">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Colegio bilingüe · Buenos Aires
+        </div>
+        <h1>Formamos personas<br>que <em>transforman</em><br><strong>el mundo</strong></h1>
+        <p class="hero-desc">Educación integral, valores sólidos y una comunidad comprometida con el crecimiento de cada alumno desde sala de 3 hasta el bachillerato.</p>
+        <div class="hero-btns">
+          <a href="#admisiones" class="btn-blanco">
+            Inscripciones 2026
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#niveles" class="btn-ghost-blanco">Conocer el colegio</a>
+        </div>
+      </div>
+      <div class="hero-right-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div><span class="hero-stat-num">45</span><span class="hero-stat-label">Años de trayectoria</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div><span class="hero-stat-num">+800</span><span class="hero-stat-label">Alumnos activos</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <div><span class="hero-stat-num">98%</span><span class="hero-stat-label">Egresados universitarios</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div><span class="hero-stat-num">Cambridge</span><span class="hero-stat-label">Certificación al egreso</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-strip">
+      <div class="hero-strip-item"><span class="hero-strip-num">45</span><span class="hero-strip-label">Años</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-num">+800</span><span class="hero-strip-label">Alumnos</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-num">98%</span><span class="hero-strip-label">Universitarios</span></div>
+      <div class="hero-strip-item"><span class="hero-strip-num">60</span><span class="hero-strip-label">Docentes</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="propuesta">
+  <div class="reveal">
+    <span class="section-tag">Nuestra propuesta</span>
+    <h2>Más que un colegio,<br>una <em>comunidad</em></h2>
+  </div>
+  <div class="prop-cards">
+    <div class="prop-card reveal d1">
+      <div class="prop-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+      <h3>Educación bilingüe certificada</h3>
+      <p>Programa de inglés intensivo con certificación Cambridge al egreso. Docentes nativos y clases en ambos idiomas desde nivel inicial.</p>
+    </div>
+    <div class="prop-card reveal d2">
+      <div class="prop-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h3>Metodología innovadora</h3>
+      <p>Aprendizaje basado en proyectos, aulas tecnológicas y un currículo que integra las habilidades del siglo XXI con valores sólidos.</p>
+    </div>
+    <div class="prop-card reveal d3">
+      <div class="prop-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Comunidad y valores</h3>
+      <p>Convivencia basada en el respeto, la solidaridad y la responsabilidad. Formamos ciudadanos comprometidos con su entorno.</p>
+    </div>
+  </div>
+</section>
+
+<section id="niveles">
+  <div class="reveal">
+    <span class="section-tag">Niveles educativos</span>
+    <h2>Acompañamos cada <em>etapa</em></h2>
+  </div>
+  <div class="niv-tabs">
+    <button class="niv-tab active" onclick="switchNivel(this,'inicial')">Nivel Inicial</button>
+    <button class="niv-tab" onclick="switchNivel(this,'primario')">Nivel Primario</button>
+    <button class="niv-tab" onclick="switchNivel(this,'secundario')">Nivel Secundario</button>
+  </div>
+  <div class="niv-panel active" id="niv-inicial">
+    <div class="niv-panel-img">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80" alt="Nivel Inicial">
+      <span class="niv-edad-badge">3 a 5 años</span>
+    </div>
+    <div class="niv-panel-content">
+      <h3>Nivel <em>Inicial</em></h3>
+      <p>Estimulación temprana, juego como herramienta de aprendizaje e introducción al inglés desde sala de 3. Un ambiente cálido y seguro para los primeros pasos.</p>
+      <div class="niv-feats">
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Doble turno optativo</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Inglés desde sala de 3</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Educación física y música</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Espacios de juego y exploración</div>
+      </div>
+      <a href="#admisiones" class="niv-cta">Inscribir en Inicial <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+  <div class="niv-panel" id="niv-primario">
+    <div class="niv-panel-img">
+      <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700&q=80" alt="Nivel Primario">
+      <span class="niv-edad-badge">6 a 11 años</span>
+    </div>
+    <div class="niv-panel-content">
+      <h3>Nivel <em>Primario</em></h3>
+      <p>Formación sólida en competencias académicas, pensamiento crítico y trabajo en equipo. Metodologías activas que despiertan la curiosidad y el amor por aprender.</p>
+      <div class="niv-feats">
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Bilingüismo intensivo</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Laboratorio de ciencias</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Talleres extracurriculares</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Proyectos interdisciplinarios</div>
+      </div>
+      <a href="#admisiones" class="niv-cta">Inscribir en Primario <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+  <div class="niv-panel" id="niv-secundario">
+    <div class="niv-panel-img">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80" alt="Nivel Secundario">
+      <span class="niv-edad-badge">12 a 17 años</span>
+    </div>
+    <div class="niv-panel-content">
+      <h3>Nivel <em>Secundario</em></h3>
+      <p>Bachillerato con orientación en Ciencias Sociales o Naturales, preparación universitaria, liderazgo y certificación Cambridge internacional.</p>
+      <div class="niv-feats">
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Orientación vocacional</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Certificación Cambridge</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>Intercambios internacionales</div>
+        <div class="niv-feat"><div class="niv-feat-dot"></div>STEM y robótica</div>
+      </div>
+      <a href="#admisiones" class="niv-cta">Inscribir en Secundario <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="vida">
+  <div class="reveal">
+    <span class="section-tag">Vida escolar</span>
+    <h2>Aprender va más allá del <em>aula</em></h2>
+  </div>
+  <div class="vida-grid">
+    <div class="vida-card reveal d1">
+      <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=500&q=80" alt="Deportes">
+      <div class="vida-card-body"><div class="vida-card-tag">Deportes</div><div class="vida-card-title">Actividad física y equipo</div><div class="vida-card-desc">Fútbol, básquet, natación y atletismo. Torneos intercolegiales.</div></div>
+    </div>
+    <div class="vida-card reveal d2">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" alt="Arte">
+      <div class="vida-card-body"><div class="vida-card-tag">Arte & Cultura</div><div class="vida-card-title">Expresión y creatividad</div><div class="vida-card-desc">Teatro, coro, artes visuales y banda musical.</div></div>
+    </div>
+    <div class="vida-card reveal d3">
+      <img src="https://images.unsplash.com/photo-1532094349884-543559059a1b?w=500&q=80" alt="Ciencia">
+      <div class="vida-card-body"><div class="vida-card-tag">Ciencia & Tech</div><div class="vida-card-title">Innovación y pensamiento</div><div class="vida-card-desc">Robótica, programación y olimpíadas científicas.</div></div>
+    </div>
+    <div class="vida-card reveal d4">
+      <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&q=80" alt="Solidaridad">
+      <div class="vida-card-body"><div class="vida-card-tag">Solidaridad</div><div class="vida-card-title">Compromiso social</div><div class="vida-card-desc">Proyectos comunitarios integrados al currículo.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="numeros">
+  <div class="num-item reveal"><span class="num-val"><span class="count-up" data-target="45">0</span></span><span class="num-label">Años de trayectoria</span></div>
+  <div class="num-item reveal d1"><span class="num-val"><span class="count-up" data-target="800" data-prefix="+">0</span></span><span class="num-label">Alumnos activos</span></div>
+  <div class="num-item reveal d2"><span class="num-val"><span class="count-up" data-target="98">0</span><span class="num-suffix">%</span></span><span class="num-label">Egresados universitarios</span></div>
+  <div class="num-item reveal d3"><span class="num-val"><span class="count-up" data-target="60">0</span></span><span class="num-label">Docentes especializados</span></div>
+</div>
+
+<section id="testimonios">
+  <div class="testi-header reveal">
+    <div><span class="section-tag">Lo que dicen las familias</span><h2>Una comunidad que <em>confía</em></h2></div>
+    <div class="testi-rating">
+      <div class="testi-rating-num">4.9</div>
+      <div>
+        <div class="testi-rating-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="testi-rating-label">Basado en +300 reseñas</div>
+      </div>
+    </div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal"><div class="testi-bigquote">"</div><div class="testi-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Nuestros tres hijos pasaron por San Andrés. La formación que recibieron no tiene comparación. Hoy los tres están en universidades de primer nivel y con valores que los distinguen."</p><div class="testi-author"><div class="testi-av">MR</div><div><div class="testi-name">Marcela y Roberto Díaz</div><div class="testi-role">18 años en la comunidad</div></div></div></div>
+    <div class="testi-card reveal d1"><div class="testi-bigquote">"</div><div class="testi-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Lo que más valoro es que los docentes conocen a mi hijo por su nombre desde el primer día. El nivel de contención y seguimiento personalizado es increíble."</p><div class="testi-author"><div class="testi-av">LP</div><div><div class="testi-name">Laura Pérez</div><div class="testi-role">Mamá de Juan · 2do primaria</div></div></div></div>
+    <div class="testi-card reveal d2"><div class="testi-bigquote">"</div><div class="testi-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="testi-text">"Mi hija egresó con el certificado Cambridge y entró directo a la UBA con promedio 9. Pero más que los resultados académicos, me enorgullece la persona que es hoy."</p><div class="testi-author"><div class="testi-av">CM</div><div><div class="testi-name">Carlos Mendoza</div><div class="testi-role">Papá de Valentina · Egresada 2023</div></div></div></div>
+  </div>
+</section>
+
+<section id="admisiones">
+  <div class="adm-wrap">
+    <div class="reveal-left">
+      <span class="section-tag">Proceso de admisión</span>
+      <h2>Inscripciones <em>2026</em> abiertas</h2>
+      <p>Cupos limitados por nivel. Te acompañamos en cada paso para que la transición sea simple y tranquila.</p>
+      <div class="adm-steps">
+        <div class="adm-step"><div class="adm-step-num">1</div><div><h4>Completá el formulario</h4><p>Completá tus datos y te contactamos dentro de las 24hs hábiles.</p></div></div>
+        <div class="adm-step"><div class="adm-step-num">2</div><div><h4>Visita al colegio</h4><p>Coordinamos una visita guiada para conocer las instalaciones y el equipo.</p></div></div>
+        <div class="adm-step"><div class="adm-step-num">3</div><div><h4>Entrevista con Dirección</h4><p>Conversación breve con dirección para conocer a la familia y al alumno.</p></div></div>
+        <div class="adm-step"><div class="adm-step-num">4</div><div><h4>Confirmación del cupo</h4><p>Una vez aprobado el proceso, confirmás el cupo con la matrícula.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="adm-form-wrap">
+        <h3>Consultá por <em>inscripciones</em></h3>
+        <p>Completá el formulario y nos comunicamos a la brevedad.</p>
+        <div class="adm-form">
+          <div class="adm-row">
+            <div class="adm-field"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+            <div class="adm-field"><label>Teléfono</label><input type="tel" placeholder="+54 11..."></div>
+          </div>
+          <div class="adm-field"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+          <div class="adm-row">
+            <div class="adm-field"><label>Nombre del alumno</label><input type="text" placeholder="Nombre del hijo/a"></div>
+            <div class="adm-field"><label>Nivel al que ingresa</label><select><option value="">Seleccioná...</option><option>Sala de 3 — Inicial</option><option>Sala de 4 — Inicial</option><option>Sala de 5 — Inicial</option><option>1er grado — Primario</option><option>2do grado — Primario</option><option>3er a 6to grado</option><option>1er año — Secundario</option><option>2do a 5to año</option></select></div>
+          </div>
+          <button class="btn-submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>Solicitar información</button>
+          <p class="adm-note">Respondemos dentro de las 24hs hábiles. Cupos limitados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo"><div class="ft-logo-em">SA</div><span class="ft-logo-name">Colegio San Andrés</span></div>
+      <p>Educación bilingüe, valores sólidos y comunidad comprometida desde 1978.</p>
+      <div class="ft-acred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>Habilitado por el Ministerio de Educación</div>
+    </div>
+    <div class="ft-col"><h5>El colegio</h5><ul><li><a href="#">Quiénes somos</a></li><li><a href="#">Niveles educativos</a></li><li><a href="#">Vida escolar</a></li><li><a href="#">Equipo docente</a></li></ul></div>
+    <div class="ft-col"><h5>Familias</h5><ul><li><a href="#">Inscripciones 2026</a></li><li><a href="#">Portal de familias</a></li><li><a href="#">Calendario escolar</a></li><li><a href="#">Comunicados</a></li></ul></div>
+    <div class="ft-col"><h5>Contacto</h5><ul><li><a href="#">+54 11 0000-0000</a></li><li><a href="#">admisiones@sanandres.edu.ar</a></li><li><a href="#">Av. Libertador 1234, CABA</a></li><li><a href="#">Instagram · Facebook</a></li></ul></div>
+  </div>
+  <div class="ft-bottom"><p>© 2025 Colegio San Andrés · Buenos Aires, Argentina</p><a href="#">Política de privacidad</a></div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const obs2 = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='none'; } }); }, { threshold: .08 });
+document.querySelectorAll('.reveal-left,.reveal-right').forEach(el => { el.style.opacity='0'; el.style.transform=el.classList.contains('reveal-left')?'translateX(-24px)':'translateX(24px)'; el.style.transition='opacity .75s ease, transform .75s ease'; obs2.observe(el); });
+function switchNivel(btn, id) { document.querySelectorAll('.niv-tab').forEach(t => t.classList.remove('active')); document.querySelectorAll('.niv-panel').forEach(p => p.classList.remove('active')); btn.classList.add('active'); document.getElementById('niv-'+id).classList.add('active'); }
+function animateCount(el) { const target=parseInt(el.dataset.target); const prefix=el.dataset.prefix||''; const inc=target/100; let cur=0; const t=setInterval(()=>{ cur=Math.min(cur+inc,target); el.textContent=prefix+Math.floor(cur); if(cur>=target)clearInterval(t); },16); }
+const countObs = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting){ e.target.querySelectorAll('.count-up').forEach(animateCount); countObs.unobserve(e.target); } }); }, { threshold: .3 });
+document.querySelectorAll('.numeros').forEach(el => countObs.observe(el));
+document.querySelector('.btn-submit').addEventListener('click', function() { const o=this.innerHTML; this.innerHTML='✓ Solicitud enviada'; this.style.background='#2E7D5E'; setTimeout(()=>{ this.innerHTML=o; this.style.background=''; },3000); });
+</script>
+</body>
+</html>
