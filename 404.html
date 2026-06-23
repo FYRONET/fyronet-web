@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Página no encontrada | Fyronet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Sora',sans-serif;
+  background:#f0f4fa;
+  color:#1a2540;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  min-height:100vh;
+  padding:2rem;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Fondo animado */
+.bg-circle{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,102,255,.08) 0%,transparent 70%);
+  pointer-events:none;
+  animation:pulse 6s ease-in-out infinite;
+}
+.bg-circle.c1{width:600px;height:600px;top:-200px;right:-200px;animation-delay:0s}
+.bg-circle.c2{width:400px;height:400px;bottom:-100px;left:-100px;animation-delay:3s}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.1);opacity:1}}
+
+/* Logo */
+.logo{
+  display:flex;align-items:center;gap:.7rem;
+  text-decoration:none;margin-bottom:3rem;
+  position:relative;z-index:1;
+  opacity:0;animation:fadeUp .6s .1s ease forwards;
+}
+.logo-icon{
+  width:40px;height:40px;background:#0066ff;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.logo-icon svg{width:20px;height:20px;color:#fff}
+.logo-name{font-size:1.2rem;font-weight:700;color:#1a2540;letter-spacing:-.01em}
+.logo-name span{color:#0066ff}
+
+/* Número 404 */
+.error-num{
+  font-size:clamp(8rem,20vw,14rem);
+  font-weight:800;line-height:1;
+  color:transparent;
+  background:linear-gradient(135deg,#0066ff 0%,#0044cc 100%);
+  -webkit-background-clip:text;background-clip:text;
+  letter-spacing:-.04em;
+  position:relative;z-index:1;
+  opacity:0;animation:fadeUp .7s .2s ease forwards;
+}
+
+/* Contenido */
+.content{
+  text-align:center;position:relative;z-index:1;
+  max-width:480px;
+  opacity:0;animation:fadeUp .7s .35s ease forwards;
+}
+.content h1{
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-weight:700;color:#1a2540;
+  margin-bottom:.8rem;
+}
+.content p{
+  font-size:.95rem;color:#5a6a85;
+  line-height:1.7;margin-bottom:2rem;
+}
+
+/* Botones */
+.btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .6s .5s ease forwards;
+}
+.btn-primary{
+  background:#0066ff;color:#fff;
+  padding:.82rem 2rem;border-radius:50px;
+  font-family:'Sora',sans-serif;font-size:.9rem;font-weight:600;
+  text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn-primary:hover{background:#0044cc;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,102,255,.3)}
+.btn-primary svg{width:15px;height:15px}
+.btn-outline{
+  border:1.5px solid #e2e8f0;color:#1a2540;background:#fff;
+  padding:.82rem 1.8rem;border-radius:50px;
+  font-family:'Sora',sans-serif;font-size:.9rem;font-weight:500;
+  text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+  transition:all .2s;
+}
+.btn-outline:hover{border-color:#0066ff;color:#0066ff}
+.btn-outline svg{width:15px;height:15px}
+
+/* Links rápidos */
+.quick-links{
+  margin-top:2.5rem;
+  display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .6s .65s ease forwards;
+}
+.quick-link{
+  font-size:.82rem;color:#5a6a85;text-decoration:none;
+  display:flex;align-items:center;gap:.3rem;
+  transition:color .2s;
+}
+.quick-link:hover{color:#0066ff}
+.quick-link svg{width:13px;height:13px}
+
+/* Footer */
+.footer-note{
+  position:absolute;bottom:2rem;
+  font-size:.75rem;color:#9aa5b4;
+  opacity:0;animation:fadeUp .6s .8s ease forwards;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:500px){
+  .error-num{font-size:clamp(6rem,25vw,10rem)}
+  .btns{flex-direction:column;align-items:center}
+  .btns a{width:100%;max-width:280px;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-circle c1"></div>
+<div class="bg-circle c2"></div>
+
+<a href="/" class="logo">
+  <div class="logo-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+  </div>
+  <span class="logo-name">Fyro<span>net</span></span>
+</a>
+
+<div class="error-num">404</div>
+
+<div class="content">
+  <h1>Esta página no existe</h1>
+  <p>La página que estás buscando fue movida, eliminada o nunca existió. Pero no te preocupes, podés volver al inicio desde acá.</p>
+</div>
+
+<div class="btns">
+  <a href="/" class="btn-primary">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Volver al inicio
+  </a>
+  <a href="/#contacto" class="btn-outline">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+    Contactarnos
+  </a>
+</div>
+
+<div class="quick-links">
+  <a href="/#servicios" class="quick-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    Servicios
+  </a>
+  <a href="/#portfolio" class="quick-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    Portfolio
+  </a>
+  <a href="/#demos" class="quick-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    Demos
+  </a>
+  <a href="/#contacto" class="quick-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    Contacto
+  </a>
+</div>
+
+<p class="footer-note">© 2025 Fyronet · fyronet.com</p>
+
+</body>
+</html>
