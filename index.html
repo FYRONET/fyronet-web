@@ -176,7 +176,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--accent)}
 .auth-co{font-size:.8rem;color:var(--muted)}
 
 /* FAQ */
-.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3rem}
+.faq-grid{display:flex;flex-direction:column;max-width:780px;margin:3rem auto 0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 .faq-item{background:var(--card);padding:1.8rem 2rem;cursor:pointer;transition:background .2s}
 .faq-item:hover{background:#f5f8ff}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:600;font-size:1rem;color:var(--dark)}
