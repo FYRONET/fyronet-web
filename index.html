@@ -28,7 +28,7 @@ body::before{display:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:transparent;border-bottom:1px solid transparent;transition:background .4s,border-color .4s,box-shadow .4s}
-nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(10,22,40,.06)}
+nav.scrolled{box-shadow:0 4px 24px rgba(10,22,40,.1)}
 .nav-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.5rem;color:var(--dark);text-decoration:none;letter-spacing:-1px;display:flex;align-items:center;gap:.4rem}.nav-logo.light{color:#fff}
 .nav-logo span{color:var(--accent)}
 
@@ -42,17 +42,7 @@ nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-
 .hamburger svg{width:24px;height:24px}
 
 /* HERO */
-#inicio{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;background:linear-gradient(160deg,#f0f6ff 0%,#ffffff 60%)}.hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none;z-index:0}.hero-fade{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,transparent 0%,#ffffff 100%);z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2}.hero-glow,.hero-glow2{z-index:0}.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;position:relative;z-index:1}.hero-left{}.hero-right{border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,102,255,.15);aspect-ratio:16/10;position:relative}.hero-right video{width:100%;height:100%;object-fit:cover;display:block;border-radius:20px}.hero-right::after{content:"";position:absolute;inset:0;border-radius:20px;border:1px solid rgba(0,102,255,.15)}@media(max-width:900px){
-  .hero-split{grid-template-columns:1fr}
-  .hero-right{display:none}
-  #inicio{background:linear-gradient(160deg,#f0f6ff 0%,#ffffff 60%)}
-  #inicio::before{content:"";position:absolute;inset:0;background:url("https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/hero_video.mp4");z-index:0}
-  .hero-video-mobile{display:block!important;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;pointer-events:none;z-index:0}
-  .hero-left{position:relative;z-index:1}
-}
-@media(max-width:600px){
-  .hero-video-mobile{opacity:.2}
-}
+#inicio{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;background:linear-gradient(160deg,#f0f6ff 0%,#ffffff 60%)}.hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none;z-index:0}.hero-fade{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to bottom,transparent 0%,#ffffff 100%);z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2}
 .hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(0,102,255,.1) 0%,transparent 70%);top:-150px;right:-100px;pointer-events:none;animation:floatGlow 8s ease-in-out infinite}
 .hero-glow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,68,204,.07) 0%,transparent 70%);bottom:-100px;left:-80px;pointer-events:none;animation:floatGlow 10s ease-in-out infinite reverse}
 @keyframes floatGlow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.05)}}
@@ -94,7 +84,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
 .marquee-track{display:flex;gap:2.5rem;animation:marquee 22s linear infinite;white-space:nowrap;width:max-content;align-items:center}
 .mitem{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
 .mitem span{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.12em;text-transform:uppercase}
-.mitem svg{width:14px;height:14px;color:rgba(255,255,255,.7);opacity:.7;stroke-width:2}
+.mitem svg{width:14px;height:14px;color:#4d9fff;opacity:.7;stroke-width:2}
 .mdot svg{width:5px;height:5px;color:#4d9fff;opacity:.5}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -151,7 +141,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--accent)}
 
 /* TEAM */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
-.team-icon-wrap{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:1px solid var(--border);transition:background .3s,transform .3s}.team-icon-wrap svg{width:30px;height:30px;color:var(--accent)}.team-card:hover .team-icon-wrap{background:linear-gradient(135deg,rgba(0,102,255,.08) 0%,rgba(0,102,255,.15) 100%);transform:scale(1.05)}.team-role{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;text-align:center}.team-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.8rem;text-align:center}.team-desc{font-size:.88rem;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:1.2rem}.team-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}.team-tags span{font-size:.72rem;font-weight:500;color:var(--accent);background:rgba(0,102,255,.06);border:1px solid rgba(0,102,255,.12);padding:.25rem .7rem;border-radius:50px}.team-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:2rem;text-align:center;transition:transform .3s,border-color .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.team-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:2rem;text-align:center;transition:transform .3s,border-color .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .team-card:hover{transform:translateY(-6px);border-color:rgba(0,102,255,.25)}
 .team-av{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(0,102,255,.15),rgba(0,68,204,.1));border:2px solid rgba(0,102,255,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
 .team-av svg{width:38px;height:38px;color:var(--accent);stroke-width:1.4}
@@ -176,8 +166,8 @@ h2 em{font-style:italic;font-weight:300;color:var(--accent)}
 .auth-co{font-size:.8rem;color:var(--muted)}
 
 /* FAQ */
-.faq-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;align-items:start}.faq-col{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}@media(max-width:768px){.faq-2col{grid-template-columns:1fr}}}
-.faq-item{align-self:start;background:var(--card);padding:1.8rem 2rem;cursor:pointer;transition:background .2s}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3rem}
+.faq-item{background:var(--card);padding:1.8rem 2rem;cursor:pointer;transition:background .2s}
 .faq-item:hover{background:#f5f8ff}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:600;font-size:1rem;color:var(--dark)}
 .faq-arr svg{width:18px;height:18px;color:var(--muted);transition:transform .3s,color .3s;stroke-width:2}
@@ -269,7 +259,7 @@ footer{padding:60px 5% 30px;background:var(--dark);border-top:none}
   /* Fix service cards overflow */
   .service-card{min-width:0}
   /* Fix team cards */
-  .team-icon-wrap{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:1px solid var(--border);transition:background .3s,transform .3s}.team-icon-wrap svg{width:30px;height:30px;color:var(--accent)}.team-card:hover .team-icon-wrap{background:linear-gradient(135deg,rgba(0,102,255,.08) 0%,rgba(0,102,255,.15) 100%);transform:scale(1.05)}.team-role{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;text-align:center}.team-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.8rem;text-align:center}.team-desc{font-size:.88rem;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:1.2rem}.team-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}.team-tags span{font-size:.72rem;font-weight:500;color:var(--accent);background:rgba(0,102,255,.06);border:1px solid rgba(0,102,255,.12);padding:.25rem .7rem;border-radius:50px}.team-card{min-width:0}
+  .team-card{min-width:0}
   /* Fix testimonials */
   .testi-card{min-width:0}
   /* Fix FAQ items */
@@ -395,6 +385,7 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
   <div class="hero-fade"></div>
   <div class="hero-glow"></div><div class="hero-glow2"></div>
   <div class="hero-content">
+    
     <h1>Tu marca merece una presencia <em>digital que vende</em></h1>
     <p class="hero-sub">Diseñamos estrategias de marketing digital, landing pages de alta conversión y campañas de pauta que generan resultados reales para tu negocio.</p>
     <div class="hero-actions">
@@ -697,43 +688,27 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
     <h2>Especialistas en <em>resultados digitales</em></h2>
   </div>
   <div class="team-grid">
-
     <div class="team-card reveal">
-      <div class="team-icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
+      <div class="team-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <div class="team-role">Estrategia & Pauta</div>
       <div class="team-title">Fundador</div>
       <p class="team-desc">Experto en campañas de performance y estrategia digital. Define la visión de cada proyecto para garantizar resultados reales desde el día uno.</p>
-      <div class="team-tags">
-        <span>Google Ads</span><span>Meta Ads</span><span>Estrategia</span><span>Analytics</span>
-      </div>
+      <div class="team-tags"><span>Google Ads</span><span>Meta Ads</span><span>Estrategia</span><span>Analytics</span></div>
     </div>
-
     <div class="team-card reveal d1">
-      <div class="team-icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
+      <div class="team-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
       <div class="team-role">Diseño & UX</div>
       <div class="team-title">Diseñador Web</div>
       <p class="team-desc">Especialista en interfaces modernas, landing pages de alta conversión y tiendas online con foco en experiencia de usuario y ventas.</p>
-      <div class="team-tags">
-        <span>Figma</span><span>HTML/CSS</span><span>UX/UI</span><span>Tienda Nube</span>
-      </div>
+      <div class="team-tags"><span>Figma</span><span>HTML/CSS</span><span>UX/UI</span><span>Tienda Nube</span></div>
     </div>
-
     <div class="team-card reveal d2">
-      <div class="team-icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><circle cx="12" cy="12" r="3"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
-      </div>
+      <div class="team-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><circle cx="12" cy="12" r="3"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></div>
       <div class="team-role">Social Media</div>
       <div class="team-title">Community Manager</div>
       <p class="team-desc">Gestión de comunidades y contenido estratégico en redes sociales. Creatividad y consistencia para hacer crecer tu marca digitalmente.</p>
-      <div class="team-tags">
-        <span>Copywriting</span><span>Reels</span><span>Diseño</span><span>Analytics</span>
-      </div>
+      <div class="team-tags"><span>Copywriting</span><span>Reels</span><span>Diseño</span><span>Analytics</span></div>
     </div>
-
   </div>
 </section>
 
@@ -780,7 +755,7 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Cuánto tiempo lleva tener mi proyecto listo? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">El proceso completo toma entre 2 y 3 semanas: diagnóstico, diseño y desarrollo, lanzamiento. Los proyectos de pauta pueden activarse en menos de 72hs.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Trabajan con empresas de todo el país? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, somos 100% digitales. Trabajamos con clientes de toda Argentina y también de Latinoamérica sin ninguna limitación geográfica.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Qué presupuesto mínimo necesito para pauta? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Trabajamos con presupuestos adaptados a cada cliente. La inversión depende de tus objetivos y el rubro. Lo definimos juntos en la reunión inicial.</div></div>
-    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿La web queda en mi propiedad? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Depende del tipo de web. Si tu sitio es una landing page en código propio, el dominio y todo el código son 100% tuyos. Si elegís una plataforma como Tienda Nube, Shopify o Tienda Negocio, el sitio funciona mientras mantengas la suscripción activa con esa plataforma — es similar a pagar un alquiler mensual. En todos los casos te explicamos claramente cómo funciona antes de arrancar, sin sorpresas.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿La web queda en mi propiedad? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Depende del tipo de web. Si tu sitio es una landing page en código propio, el dominio y todo el código son 100% tuyos. Si elegís una plataforma como Tienda Nube, Shopify o Tienda Negocio, el sitio funciona mientras mantengas la suscripción activa — es similar a pagar un alquiler mensual. En todos los casos te explicamos claramente cómo funciona antes de arrancar, sin sorpresas.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Dan reportes de resultados? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, todos los proyectos incluyen reportes mensuales con métricas clave, análisis de resultados y recomendaciones para el siguiente período.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Puedo contratar un solo servicio? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">¡Claro! Podés contratar pauta, diseño web, SEO o CM de forma independiente. También ofrecemos paquetes combinados con mejores precios.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Tienen contratos de permanencia? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, todos nuestros servicios incluyen un contrato que protege tanto al cliente como a nosotros. Podés cancelar cuando quieras con solo abonar el mes en curso. Sin cláusulas de permanencia ni penalidades.</div></div>
@@ -790,27 +765,10 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Trabajan con emprendimientos o solo negocios grandes? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Trabajamos con todo tipo de proyectos: desde emprendedores que recién comienzan hasta marcas consolidadas que buscan escalar. Adaptamos nuestras soluciones a cada necesidad.</div></div>
     <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Qué diferencia a Fyronet de otras agencias? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Nos enfocamos en resultados reales y comunicación directa. Hablamos claro, trabajamos de forma cercana y queremos que crezcas, no que dependas de nosotros.</div></div>
   </div>
-</section<div class="faq-2col">
-    <div class="faq-col">
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Cuánto tiempo lleva tener mi proyecto listo? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">El proceso completo toma entre 2 y 3 semanas: diagnóstico, diseño y desarrollo, lanzamiento. Los proyectos de pauta pueden activarse en menos de 72hs.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Trabajan con empresas de todo el país? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, somos 100% digitales. Trabajamos con clientes de toda Argentina y también de Latinoamérica sin ninguna limitación geográfica.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Qué presupuesto mínimo necesito para pauta? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Trabajamos con presupuestos adaptados a cada cliente. La inversión depende de tus objetivos y el rubro. Lo definimos juntos en la reunión inicial.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿La web queda en mi propiedad? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Depende del tipo de web. Si tu sitio es una landing page en código propio, el dominio y todo el código son 100% tuyos. Si elegís una plataforma como Tienda Nube, Shopify o Tienda Negocio, el sitio funciona mientras mantengas la suscripción activa con esa plataforma — es similar a pagar un alquiler mensual. En todos los casos te explicamos claramente cómo funciona antes de arrancar, sin sorpresas.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Dan reportes de resultados? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, todos los proyectos incluyen reportes mensuales con métricas clave, análisis de resultados y recomendaciones para el siguiente período.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Puedo contratar un solo servicio? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">¡Claro! Podés contratar pauta, diseño web, SEO o CM de forma independiente. También ofrecemos paquetes combinados con mejores precios.</div></div>
-    </div>
-    <div class="faq-col">
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Tienen contratos de permanencia? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Sí, todos nuestros servicios incluyen un contrato que protege tanto al cliente como a nosotros. Podés cancelar cuando quieras con solo abonar el mes en curso. Sin cláusulas de permanencia ni penalidades.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Cómo miden los resultados de las campañas? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Usamos Google Analytics, Meta Business Suite y reportes propios. Medimos métricas reales: leads generados, costo por conversión, ROAS y ventas. Todo transparente en tu reporte mensual.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Pueden ayudarme a crear mi página web? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">¡Así es! Te ayudamos a crear tu página web o tienda online en Tienda Nube, WordPress o con código propio. Te acompañamos en cada paso hasta la puesta en marcha.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">No tengo dominio, ¿qué hago? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">No te preocupés, te ayudamos a conseguir uno. Te asesoramos para elegir el nombre ideal y lo registramos por vos.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Trabajan con emprendimientos o solo negocios grandes? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Trabajamos con todo tipo de proyectos: desde emprendedores que recién comienzan hasta marcas consolidadas que buscan escalar. Adaptamos nuestras soluciones a cada necesidad.</div></div>
-      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">¿Qué diferencia a Fyronet de otras agencias? <span class="faq-arr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div><div class="faq-a">Nos enfocamos en resultados reales y comunicación directa. Hablamos claro, trabajamos de forma cercana y queremos que crezcas, no que dependas de nosotros.</div></div>
-    </div>
-  </div>
 </section>
+
 <!-- CONTACTO -->
-id="contacto">
+<section id="contacto">
   <div class="contact-wrap">
     <div class="contact-info reveal">
       <span class="slabel"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Contacto</span>
@@ -854,107 +812,88 @@ id="contacto">
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/logo_icon.png" alt="Fyronet" width="32">
-        <span>Fyronet</span>
-      </div>
-      <p>Agencia de marketing digital en Buenos Aires. Transformamos marcas con estrategias que generan resultados reales.</p>
-      <a href="http://qr.afip.gob.ar/?qr=iCs_HbwTXfIuRKPyTIWLKQ,," target="_blank">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/qr_arca.png" alt="QR ARCA" width="80">
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a href="#inicio" class="nav-logo light">
+    <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/logo_completo.png" data-flexible alt="Fyronet" style="height:34px;width:auto;display:block;filter:brightness(0) invert(1);">
+  </a>
+      <p>Agencia de marketing digital especializada en pauta, diseño web y estrategia para negocios que quieren crecer en serio.</p>
+      <a href="http://qr.afip.gob.ar/?qr=iCs_HbwTXfIuRKPyTIWLKQ,," target="_F960AFIPInfo" style="display:inline-block;margin-top:1rem">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/qr_arca.jpg" data-flexible alt="Data Fiscal ARCA" style="height:60px;width:auto;display:block;border-radius:4px" onerror="this.style.display='none'">
       </a>
     </div>
-    <div class="footer-col">
-      <h4>Servicios</h4>
-      <ul>
-        <li><a href="#servicios">Landing Pages</a></li>
-        <li><a href="#servicios">Ecommerce</a></li>
-        <li><a href="#servicios">Meta Ads</a></li>
-        <li><a href="#servicios">Google Ads</a></li>
-        <li><a href="#servicios">Community Management</a></li>
-        <li><a href="#servicios">SEO</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Fyronet</h4>
-      <ul>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#demos">Demos</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#equipo">Equipo</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="https://wa.me/5491163596107" target="_blank" onclick="fbq('track','Contact')">+54 11 6359-6107</a></li>
-        <li><a href="mailto:info@fyronet.com">info@fyronet.com</a></li>
-        <li><a href="https://instagram.com/fyronet" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/company/fyronet" target="_blank">LinkedIn</a></li>
-      </ul>
-    </div>
+    <div class="ft-col"><h5>Servicios</h5><ul>
+      <li><a href="#servicios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Pauta Publicitaria</a></li>
+      <li><a href="#servicios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Diseño Web</a></li>
+      <li><a href="#servicios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Tiendas Online</a></li>
+      <li><a href="#servicios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Community Manager</a></li>
+      <li><a href="#servicios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>SEO</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Agencia</h5><ul>
+      <li><a href="#equipo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>El Equipo</a></li>
+      <li><a href="#portfolio"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Portfolio</a></li>
+      <li><a href="#testimonios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Testimonios</a></li>
+      <li><a href="#faq"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>FAQ</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Contacto</h5><ul>
+      <li><a href="https://wa.me/5491163596107" onclick="fbq('track','Contact')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>WhatsApp</a></li>
+      <li><a href="mailto:info@fyronet.com"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a></li>
+      <li><a href="https://instagram.com/fyronet"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
+      <li><a href="https://linkedin.com/company/fyronet"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 Fyronet — Agencia de Marketing Digital · Buenos Aires, Argentina</p>
-    <a href="#">Política de privacidad</a>
+  <div class="ft-bottom">
+    <p>© 2025 Fyronet · fyronet.com · Buenos Aires, Argentina</p>
+    <div class="socials">
+      <a href="https://instagram.com/fyronet" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://wa.me/5491163596107" onclick="fbq('track','Contact')" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></a>
+      <a href="https://linkedin.com/company/fyronet" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://facebook.com/fyronet" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    </div>
   </div>
 </footer>
 
 <script>
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHYNszhZo2kDjEetwW_EqpP1eAx4v2bJvfoM_JgQ6AdpPpizJSQcPvNx7uxN_lI_zR/exec";
-
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('open');
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-let pfCurrent = 0;
-const pfSlides = document.querySelectorAll('.pf-slide');
-function pfUpdate() {
-  document.getElementById('pfTrack').style.transform = `translateX(-${pfCurrent * 100}%)`;
-  document.querySelectorAll('.pf-dot').forEach((d,i) => d.classList.toggle('active', i === pfCurrent));
-}
-function pfMove(dir) { pfCurrent = (pfCurrent + dir + pfSlides.length) % pfSlides.length; pfUpdate(); }
-function pfGoTo(i) { pfCurrent = i; pfUpdate(); }
-setInterval(() => pfMove(1), 6000);
-
-function toggleFaq(el) {
-  const item = el.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-
-document.querySelectorAll('.count-up').forEach(el => {
-  const observer = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      const target = parseInt(el.dataset.target);
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      let current = 0;
-      const step = target / 60;
-      const timer = setInterval(() => {
-        current = Math.min(current + step, target);
-        el.textContent = prefix + Math.floor(current) + suffix;
-        if (current >= target) clearInterval(timer);
-      }, 16);
-      observer.disconnect();
-    }
+  // ── IMAGE FORMAT FALLBACK ──────────────────────────────────
+  // Tries .jpg first, if not found tries .png and viceversa
+  document.querySelectorAll('img[data-flexible]').forEach(function(img) {
+    var originalSrc = img.src;
+    img.onerror = function() {
+      if (originalSrc.endsWith('.jpg') || originalSrc.endsWith('.jpeg')) {
+        this.src = originalSrc.replace(/\.jpe?g$/, '.png');
+      } else if (originalSrc.endsWith('.png')) {
+        this.src = originalSrc.replace('.png', '.jpg');
+      }
+      this.onerror = function() { this.style.display = 'none'; };
+    };
   });
-  observer.observe(el);
-});
+  // ────────────────────────────────────────────────────────────
 
-async function handleSubmit() {
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  function toggleMenu() {
+    const nl = document.getElementById('navLinks');
+    nl.classList.toggle('open');
+      }
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+      }));
+
+  new IntersectionObserver((entries) => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:.1})
+    .observe || (window.onscroll = () => {});
+  const obs = new IntersectionObserver((entries) => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  function toggleFaq(el) {
+    const was = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!was) el.classList.add('open');
+  }
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHYNszhZo2kDjEetwW_EqpP1eAx4v2bJvfoM_JgQ6AdpPpizJSQcPvNx7uxN_lI_zR/exec";
+
+  async function handleSubmit() {
     const nombre   = document.getElementById('f_nombre').value.trim();
     const whatsapp = document.getElementById('f_whatsapp').value.trim();
     const email    = document.getElementById('f_email').value.trim();
@@ -1014,6 +953,125 @@ async function handleSubmit() {
     btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Enviar mensaje';
   }
 
+
+  // ── COUNT UP ANIMATION ──────────────────────────────────────
+  function animateCountUp(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const steps = 60;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (step >= steps) {
+        el.textContent = prefix + target + suffix;
+        clearInterval(timer);
+      }
+    }, duration / steps);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.count-up').forEach(el => animateCountUp(el));
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) statsObserver.observe(statsEl);
+  // ────────────────────────────────────────────────────────────
+
+  const styleEl = document.createElement('style');
+  styleEl.textContent = '@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}';
+  document.head.appendChild(styleEl);
+
+  // ── PORTFOLIO CAROUSEL ──────────────────────────────────────
+  var pfCurrent = 0;
+  var pfTotal = 4;
+  var pfVisible = window.innerWidth <= 700 ? 1 : 2;
+  var pfMaxIndex = pfTotal - pfVisible;
+  var pfAutoTimer;
+
+  // Preload all carousel images on page load
+  function pfPreloadImages() {
+    var imgs = document.querySelectorAll('.pf-slide .pf-thumb img');
+    imgs.forEach(function(img) {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+      // Force reload if image failed
+      if (!img.complete || img.naturalWidth === 0) {
+        var src = img.src;
+        img.src = '';
+        img.src = src;
+      }
+    });
+  }
+
+  function pfUpdate() {
+    var track = document.getElementById('pfTrack');
+    var slideWidth = 100 / pfVisible;
+    track.style.transform = 'translateX(-' + (pfCurrent * slideWidth) + '%)';
+    var dots = document.querySelectorAll('.pf-dot');
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === pfCurrent); });
+  }
+
+  function pfMove(dir) {
+    pfCurrent = Math.max(0, Math.min(pfCurrent + dir, pfMaxIndex));
+    pfUpdate();
+    pfResetAuto();
+  }
+
+  function pfGoTo(idx) {
+    pfCurrent = Math.max(0, Math.min(idx, pfMaxIndex));
+    pfUpdate();
+    pfResetAuto();
+  }
+
+  function pfResetAuto() {
+    clearInterval(pfAutoTimer);
+    pfAutoTimer = setInterval(function() {
+      pfCurrent = pfCurrent >= pfMaxIndex ? 0 : pfCurrent + 1;
+      pfUpdate();
+    }, 4000);
+  }
+
+  // Init carousel after DOM + images ready
+  document.addEventListener('DOMContentLoaded', function() {
+    pfPreloadImages();
+    pfUpdate();
+    pfResetAuto();
+  });
+
+  // Update on resize
+  window.addEventListener('resize', function() {
+    pfVisible = window.innerWidth <= 700 ? 1 : 2;
+    pfMaxIndex = pfTotal - pfVisible;
+    pfCurrent = Math.min(pfCurrent, pfMaxIndex);
+    pfUpdate();
+  });
+
+  // Touch/swipe support
+  var pfTouchX = 0;
+  var pfTrackEl = document.getElementById('pfTrack');
+  if (pfTrackEl) {
+    pfTrackEl.addEventListener('touchstart', function(e) { pfTouchX = e.touches[0].clientX; });
+    pfTrackEl.addEventListener('touchend', function(e) {
+      var diff = pfTouchX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) pfMove(diff > 0 ? 1 : -1);
+    });
+  }
+  // ────────────────────────────────────────────────────────────
+
+function setCookie(n,v,d){var e="";if(d){var dt=new Date();dt.setTime(dt.getTime()+(d*864e5));e="; expires="+dt.toUTCString()}document.cookie=n+"="+v+e+"; path=/; SameSite=Lax"}function getCookie(n){var v="; "+document.cookie;var p=v.split("; "+n+"=");if(p.length===2)return p.pop().split(";").shift();return null}function hideCookieBanner(){var b=document.getElementById("cookieBanner");if(!b)return;b.classList.add("hide");setTimeout(function(){b.style.display="none"},300)}function cookieAccept(){setCookie("fyronet_cookies","accepted",365);hideCookieBanner()}function cookieReject(){setCookie("fyronet_cookies","rejected",365);hideCookieBanner()}document.addEventListener("DOMContentLoaded",function(){var b=document.getElementById("cookieBanner");if(b&&getCookie("fyronet_cookies"))b.style.display="none"});
 </script>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-text"><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/></svg> Usamos cookies</strong>Este sitio usa cookies para mejorar tu experiencia. Al continuar, aceptás su uso.</div><div class="cookie-btns"><button class="cookie-reject" onclick="cookieReject()">Rechazar</button><button class="cookie-accept" onclick="cookieAccept()">Aceptar</button></div></div>
 </body>
 </html>
