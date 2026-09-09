@@ -151,7 +151,7 @@ h2 em{font-style:italic;font-weight:300;color:var(--accent)}
 
 /* TEAM */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
-.team-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:2rem;text-align:center;transition:transform .3s,border-color .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.team-icon-wrap{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:1px solid var(--border);transition:background .3s,transform .3s}.team-icon-wrap svg{width:30px;height:30px;color:var(--accent)}.team-card:hover .team-icon-wrap{background:linear-gradient(135deg,rgba(0,102,255,.08) 0%,rgba(0,102,255,.15) 100%);transform:scale(1.05)}.team-role{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;text-align:center}.team-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.8rem;text-align:center}.team-desc{font-size:.88rem;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:1.2rem}.team-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}.team-tags span{font-size:.72rem;font-weight:500;color:var(--accent);background:rgba(0,102,255,.06);border:1px solid rgba(0,102,255,.12);padding:.25rem .7rem;border-radius:50px}.team-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:2rem;text-align:center;transition:transform .3s,border-color .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .team-card:hover{transform:translateY(-6px);border-color:rgba(0,102,255,.25)}
 .team-av{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(0,102,255,.15),rgba(0,68,204,.1));border:2px solid rgba(0,102,255,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
 .team-av svg{width:38px;height:38px;color:var(--accent);stroke-width:1.4}
@@ -269,7 +269,7 @@ footer{padding:60px 5% 30px;background:var(--dark);border-top:none}
   /* Fix service cards overflow */
   .service-card{min-width:0}
   /* Fix team cards */
-  .team-card{min-width:0}
+  .team-icon-wrap{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;border:1px solid var(--border);transition:background .3s,transform .3s}.team-icon-wrap svg{width:30px;height:30px;color:var(--accent)}.team-card:hover .team-icon-wrap{background:linear-gradient(135deg,rgba(0,102,255,.08) 0%,rgba(0,102,255,.15) 100%);transform:scale(1.05)}.team-role{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;text-align:center}.team-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.8rem;text-align:center}.team-desc{font-size:.88rem;color:var(--muted);line-height:1.7;text-align:center;margin-bottom:1.2rem}.team-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}.team-tags span{font-size:.72rem;font-weight:500;color:var(--accent);background:rgba(0,102,255,.06);border:1px solid rgba(0,102,255,.12);padding:.25rem .7rem;border-radius:50px}.team-card{min-width:0}
   /* Fix testimonials */
   .testi-card{min-width:0}
   /* Fix FAQ items */
@@ -697,24 +697,43 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
     <h2>Especialistas en <em>resultados digitales</em></h2>
   </div>
   <div class="team-grid">
+
     <div class="team-card reveal">
-      <div class="team-av" style="overflow:hidden"><img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/equipo_01.jpg" data-flexible alt="Brian" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'"></div>
-      <h3>Brian</h3><span class="team-role">Fundador · Estrategia &amp; Pauta</span>
-      <p class="team-bio">Experto en campañas de performance y estrategia digital. Define la visión de cada proyecto para garantizar resultados reales desde el día uno.</p>
-      <div class="team-skills"><span class="team-sk">Google Ads</span><span class="team-sk">Meta Ads</span><span class="team-sk">Estrategia</span><span class="team-sk">Analytics</span></div>
+      <div class="team-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="team-role">Estrategia & Pauta</div>
+      <div class="team-title">Fundador</div>
+      <p class="team-desc">Experto en campañas de performance y estrategia digital. Define la visión de cada proyecto para garantizar resultados reales desde el día uno.</p>
+      <div class="team-tags">
+        <span>Google Ads</span><span>Meta Ads</span><span>Estrategia</span><span>Analytics</span>
+      </div>
     </div>
+
     <div class="team-card reveal d1">
-      <div class="team-av" style="overflow:hidden"><img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/equipo_02.jpg" data-flexible alt="Diseño" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'"></div>
-      <h3>Diseño &amp; UX</h3><span class="team-role">Diseñador Web</span>
-      <p class="team-bio">Especialista en interfaces modernas, landing pages de alta conversión y tiendas online con foco en experiencia de usuario y ventas.</p>
-      <div class="team-skills"><span class="team-sk">Figma</span><span class="team-sk">HTML/CSS</span><span class="team-sk">UX/UI</span><span class="team-sk">Tienda Nube</span></div>
+      <div class="team-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="team-role">Diseño & UX</div>
+      <div class="team-title">Diseñador Web</div>
+      <p class="team-desc">Especialista en interfaces modernas, landing pages de alta conversión y tiendas online con foco en experiencia de usuario y ventas.</p>
+      <div class="team-tags">
+        <span>Figma</span><span>HTML/CSS</span><span>UX/UI</span><span>Tienda Nube</span>
+      </div>
     </div>
+
     <div class="team-card reveal d2">
-      <div class="team-av" style="overflow:hidden"><img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/equipo_03.jpg" data-flexible alt="Social Media" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'"></div>
-      <h3>Social Media</h3><span class="team-role">Community Manager</span>
-      <p class="team-bio">Gestión de comunidades y contenido estratégico en redes sociales. Creatividad y consistencia para hacer crecer tu marca digitalmente.</p>
-      <div class="team-skills"><span class="team-sk">Copywriting</span><span class="team-sk">Reels</span><span class="team-sk">Diseño</span><span class="team-sk">Analytics</span></div>
+      <div class="team-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/><circle cx="12" cy="12" r="3"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+      </div>
+      <div class="team-role">Social Media</div>
+      <div class="team-title">Community Manager</div>
+      <p class="team-desc">Gestión de comunidades y contenido estratégico en redes sociales. Creatividad y consistencia para hacer crecer tu marca digitalmente.</p>
+      <div class="team-tags">
+        <span>Copywriting</span><span>Reels</span><span>Diseño</span><span>Analytics</span>
+      </div>
     </div>
+
   </div>
 </section>
 
