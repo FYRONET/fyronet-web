@@ -176,8 +176,8 @@ h2 em{font-style:italic;font-weight:300;color:var(--accent)}
 .auth-co{font-size:.8rem;color:var(--muted)}
 
 /* FAQ */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:3rem}@media(max-width:768px){.faq-grid{grid-template-columns:1fr}}
-.faq-item{align-self:start;background:var(--card);padding:1.8rem 2rem;cursor:pointer;transition:background .2s}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;background:transparent;border:none;border-radius:0;overflow:visible;margin-top:3rem}@media(max-width:768px){.faq-grid{grid-template-columns:1fr;gap:0}}@media(max-width:768px){.faq-grid{grid-template-columns:1fr}}
+.faq-item{align-self:start;background:var(--card);padding:1.8rem 2rem;cursor:pointer;transition:background .2s;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1px}
 .faq-item:hover{background:#f5f8ff}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:600;font-size:1rem;color:var(--dark)}
 .faq-arr svg{width:18px;height:18px;color:var(--muted);transition:transform .3s,color .3s;stroke-width:2}
@@ -382,7 +382,7 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
   <ul class="nav-links" id="navLinks">
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#clientes">Portfolio</a></li>
+    <li><a href="#clientes">Clientes</a></li>
     <li><a href="#equipo">Equipo</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#contacto" class="nav-cta">Hablemos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
@@ -819,7 +819,7 @@ src="https://www.facebook.com/tr?id=475928245473914&ev=PageView&noscript=1"
     </ul></div>
     <div class="ft-col"><h5>Agencia</h5><ul>
       <li><a href="#equipo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>El Equipo</a></li>
-      <li><a href="#clientes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Portfolio</a></li>
+      <li><a href="#clientes"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Clientes</a></li>
       <li><a href="#testimonios"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Testimonios</a></li>
       <li><a href="#faq"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>FAQ</a></li>
     </ul></div>
