@@ -261,6 +261,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
   .filters{gap:.4rem}
   .filter-btn{font-size:.82rem;padding:.45rem 1rem}
 }
+.pf-cta-card{cursor:default!important}.card-cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;padding:.6rem 1.3rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s}.card-cta-btn:hover{background:var(--accent2)}.card-cta-btn svg{width:14px;height:14px}
 </style>
 </head>
 <body>
@@ -321,283 +322,171 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
 
 <!-- GRID -->
 <div class="pf-section">
-  <p class="pf-count reveal">Mostrando <span id="countNum">4</span> proyectos</p>
+  <p class="pf-count reveal">Mostrando <span id="countNum">7</span> proyectos</p>
   <div class="pf-grid" id="pfGrid">
 
-    <!-- CARD 1 -->
-    <div class="pf-card reveal" data-category="ecommerce pauta" onclick="openModal(0)">
+        <!-- CARD 1 -->
+    <div class="pf-card reveal" data-category="ecommerce pauta seo cm" onclick="openModal(0)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_01.jpg" data-flexible alt="Vivagis" onerror="this.style.display='none'">
-        <div class="thumb-placeholder" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </div>
-        <div class="card-overlay">
-          <div class="card-overlay-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Ver detalle
-          </div>
-        </div>
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          Ecommerce · Pauta
-        </div>
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_01.jpg" data-flexible alt="Gisary SA — Vivagis" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Ecommerce · Pauta · SEO · CM</div>
       </div>
       <div class="card-body">
-        <h3>Vivagis</h3>
-        <p>Tienda de indumentaria femenina con catálogo completo, medios de pago integrados y campañas activas en Meta Ads para potenciar las ventas.</p>
-        <div class="card-tags">
-          <span class="card-tag">Tienda Negocio</span>
-          <span class="card-tag">Meta Ads</span>
-          <span class="card-tag">Catálogo</span>
-        </div>
+        <h3>Gisary SA — Vivagis</h3>
+        <p>Mayorista de indumentaria sin presencia online. Implementamos tienda, Google Ads, Meta Ads y TikTok Ads, automatizaciones, CM y SEO. En el último mes alcanzaron un ROAS de x37.</p>
+        <div class="card-tags"><span class="card-tag">Google Ads</span><span class="card-tag">Meta Ads</span><span class="card-tag">TikTok Ads</span><span class="card-tag">SEO</span><span class="card-tag">CM</span><span class="card-tag">Automatizaciones</span><span class="card-tag">Tienda Online</span></div>
         <div class="card-metrics">
-          <span class="card-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            Ecommerce activo
-          </span>
-          <span class="card-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            Pauta activa
-          </span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>x37</strong> ROAS último mes</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>7 servicios</strong> Activos</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>↑ Exponencial</strong> Crecimiento</span>
         </div>
-        <a href="https://vivagis.com" target="_blank" class="card-link" onclick="event.stopPropagation()">
-          Ver sitio web
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <a href="https://vivagis.com" target="_blank" class="card-link" onclick="event.stopPropagation()">Ver sitio web <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
-
     <!-- CARD 2 -->
-    <div class="pf-card reveal d1" data-category="ecommerce" onclick="openModal(1)">
-      <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_02.jpg" data-flexible alt="Magnas" onerror="this.style.display='none'">
-        <div class="thumb-placeholder" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        </div>
-        <div class="card-overlay">
-          <div class="card-overlay-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Ver detalle
-          </div>
-        </div>
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          Ecommerce
-        </div>
-      </div>
-      <div class="card-body">
-        <h3>Magnas</h3>
-        <p>Tienda de indumentaria femenina premium con catálogo completo, envíos a todo el país y hasta 3 cuotas sin interés.</p>
-        <div class="card-tags">
-          <span class="card-tag">Tienda Negocio</span>
-          <span class="card-tag">Cuotas sin interés</span>
-          <span class="card-tag">Envíos</span>
-        </div>
-        <div class="card-metrics">
-          <span class="card-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            Tienda creciendo
-          </span>
-        </div>
-        <a href="https://magnas.com.ar" target="_blank" class="card-link" onclick="event.stopPropagation()">
-          Ver sitio web
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="pf-card reveal d1" data-category="ecommerce social" onclick="openModal(2)">
+    <div class="pf-card reveal" data-category="ecommerce pauta cm" onclick="openModal(1)">
       <div class="card-thumb">
         <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_03.jpg" data-flexible alt="Extreme Life" onerror="this.style.display='none'">
-        <div class="thumb-placeholder" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <div class="card-overlay">
-          <div class="card-overlay-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Ver detalle
-          </div>
-        </div>
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          Ecommerce · Social Media
-        </div>
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Ecommerce · Meta Ads · CM</div>
       </div>
       <div class="card-body">
         <h3>Extreme Life</h3>
-        <p>Tienda de moda urbana con gestión completa de redes sociales, contenido estratégico y comunidad activa en Instagram.</p>
-        <div class="card-tags">
-          <span class="card-tag">Tienda Negocio</span>
-          <span class="card-tag">Community Manager</span>
-          <span class="card-tag">Instagram</span>
-        </div>
+        <p>Marca de moda urbana construida desde cero. Tienda online, Meta Ads y community management con crecimiento sostenido en ventas y comunidad.</p>
+        <div class="card-tags"><span class="card-tag">Meta Ads</span><span class="card-tag">Community Manager</span><span class="card-tag">Tienda Online</span><span class="card-tag">Instagram</span></div>
         <div class="card-metrics">
-          <span class="card-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            CM activo
-          </span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>Lanzamiento</strong> Completo desde 0</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Meta Ads</strong> Pauta activa</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>CM</strong> Gestión activa</span>
         </div>
-        <a href="https://extremelife.com.ar" target="_blank" class="card-link" onclick="event.stopPropagation()">
-          Ver sitio web
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <a href="https://extremelife.com.ar" target="_blank" class="card-link" onclick="event.stopPropagation()">Ver sitio web <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
-
-    <!-- CARD 4 - PLACEHOLDER -->
-    <div class="pf-card reveal d2" data-category="all" onclick="openModal(3)">
+    <!-- CARD 3 -->
+    <div class="pf-card reveal" data-category="ecommerce pauta" onclick="openModal(2)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_04.jpg" data-flexible alt="Próximo proyecto" onerror="this.style.display='none'">
-        <div class="thumb-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <div class="card-overlay">
-          <div class="card-overlay-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Ver detalle
-          </div>
-        </div>
-        <div class="card-cat">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          Tu marca acá
-        </div>
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_02.jpg" data-flexible alt="Magnas" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Ecommerce · Meta Ads</div>
       </div>
       <div class="card-body">
-        <h3>Tu marca acá</h3>
-        <p>¿Querés que tu negocio aparezca en esta sección? Trabajemos juntos y construimos tu caso de éxito.</p>
-        <div class="card-tags">
-          <span class="card-tag">Próximamente</span>
-        </div>
+        <h3>Magnas</h3>
+        <p>Indumentaria femenina premium. Tienda online completa y Meta Ads para ventas sostenidas con envíos a todo el país.</p>
+        <div class="card-tags"><span class="card-tag">Meta Ads</span><span class="card-tag">Tienda Online</span><span class="card-tag">Catálogo</span><span class="card-tag">Envíos</span></div>
         <div class="card-metrics">
-          <span class="card-metric">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            El próximo podés ser vos
-          </span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>Ecommerce</strong> Activo</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>3 cuotas</strong> Sin interés</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>Todo el país</strong> Envíos</span>
         </div>
-        <a href="index.html#contacto" class="card-link" onclick="event.stopPropagation()">
-          Hablemos
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+        <a href="https://magnas.com.ar" target="_blank" class="card-link" onclick="event.stopPropagation()">Ver sitio web <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
+    <!-- CARD 4 -->
+    <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(3)">
+      <div class="card-thumb">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_04.jpg" data-flexible alt="BellaSkin — Centro Estético" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads</div>
+      </div>
+      <div class="card-body">
+        <h3>BellaSkin — Centro Estético</h3>
+        <p>Centro estético de CABA. Landing de alta conversión + Meta Ads segmentadas. Las consultas vía WhatsApp se triplicaron en el primer mes.</p>
+        <div class="card-tags"><span class="card-tag">Landing Page</span><span class="card-tag">Meta Ads</span><span class="card-tag">WhatsApp</span><span class="card-tag">Leads</span></div>
+        <div class="card-metrics">
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>x3</strong> Consultas WhatsApp</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>-45%</strong> Costo por lead</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>Mes 1</strong> Resultados</span>
+        </div>
+      </div>
+    </div>
+    <!-- CARD 5 -->
+    <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(4)">
+      <div class="card-thumb">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_01.jpg" data-flexible alt="Norte Propiedades" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Google Ads</div>
+      </div>
+      <div class="card-body">
+        <h3>Norte Propiedades</h3>
+        <p>Inmobiliaria del norte del GBA. Landing profesional + Google Ads con segmentación geográfica. ROI positivo desde la primera semana.</p>
+        <div class="card-tags"><span class="card-tag">Landing Page</span><span class="card-tag">Google Ads</span><span class="card-tag">Leads</span><span class="card-tag">Real Estate</span></div>
+        <div class="card-metrics">
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>+180%</strong> Leads mensuales</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>Sem. 1</strong> ROI positivo</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>GBA Norte</strong> Segmentación</span>
+        </div>
+      </div>
+    </div>
+    <!-- CARD 6 -->
+    <div class="pf-card reveal" data-category="landing pauta cm" onclick="openModal(5)">
+      <div class="card-thumb">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_02.jpg" data-flexible alt="FitZone Gym" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads · CM</div>
+      </div>
+      <div class="card-body">
+        <h3>FitZone Gym</h3>
+        <p>Cadena de gimnasios buscando captar socios. Landing + Meta Ads de alto impacto + community management activo.</p>
+        <div class="card-tags"><span class="card-tag">Meta Ads</span><span class="card-tag">Landing Page</span><span class="card-tag">CM</span><span class="card-tag">Formulario</span></div>
+        <div class="card-metrics">
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>+220</strong> Socios nuevos/mes</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>x4.5</strong> ROAS campañas</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>CM</strong> Gestión activa</span>
+        </div>
+      </div>
+    </div>
+    <!-- CARD 7 -->
+    <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(6)">
+      <div class="card-thumb">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_03.jpg" data-flexible alt="Sabores del Fuego" onerror="this.style.display='none'">
+        <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
+        <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads</div>
+      </div>
+      <div class="card-body">
+        <h3>Sabores del Fuego</h3>
+        <p>Restaurante de carnes en CABA. Landing con reservas integradas + Meta Ads geolocalizadas. Reservas online +300% en 60 días.</p>
+        <div class="card-tags"><span class="card-tag">Landing Page</span><span class="card-tag">Meta Ads</span><span class="card-tag">Reservas Online</span><span class="card-tag">Local</span></div>
+        <div class="card-metrics">
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><strong>+300%</strong> Reservas online</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><strong>60 días</strong> Para lograrlo</span>
+          <span class="card-metric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><strong>CABA</strong> Geo targeting</span>
+        </div>
+      </div>
+    </div>
+    <!-- CARD CTA -->
+    <div class="pf-card pf-cta-card reveal" data-category="all">
+      <div class="card-thumb" style="background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div>
+      <div class="card-body" style="display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:2.5rem 2rem">
+        <h3>¿Querés ver tu marca acá?</h3>
+        <p style="margin-bottom:1.2rem">Trabajamos con negocios de todos los rubros. Contanos tu proyecto y armamos una estrategia a medida.</p>
+        <a href="index.html#contacto" class="card-cta-btn">Hablemos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
 
   </div>
 </div>
-
-<!-- CTA -->
-<div class="pf-cta reveal">
-  <span class="slabel">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
-    ¿Listo para crecer?
-  </span>
-  <h2>Tu negocio podría ser el <em>próximo caso</em></h2>
-  <p>Trabajamos con un número limitado de clientes por mes para garantizar dedicación total a cada proyecto.</p>
-  <a href="index.html#contacto" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s">
-    Quiero mi asesoría gratuita
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-  </a>
-</div>
-
-<!-- FOOTER MINI -->
-<div class="pf-footer">
-  <p>© 2025 Fyronet · fyronet.com · Buenos Aires, Argentina</p>
-  <a href="index.html">Volver al inicio</a>
-</div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-  <div class="modal" id="modal">
-    <div class="modal-thumb" id="modalThumb">
-      <div class="thumb-placeholder" id="modalPlaceholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      </div>
-      <img id="modalImg" src="" alt="" style="display:none">
-      <button class="modal-close" onclick="closeModal()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="modal-cat" id="modalCat"></div>
-    </div>
-    <div class="modal-body">
-      <h2 id="modalTitle"></h2>
-      <p class="modal-desc" id="modalDesc"></p>
-      <div class="modal-section-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        Resultados
-      </div>
-      <div class="modal-metrics" id="modalMetrics"></div>
-      <div class="modal-section-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        Servicios utilizados
-      </div>
-      <div class="modal-tags" id="modalTags"></div>
-      <a href="#" id="modalLink" class="modal-link" target="_blank">
-        Visitar sitio web
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
-
 <script>
 const SUPABASE = 'https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images';
 
 // Projects data
 const projects = [
-  {
-    title: 'Vivagis',
-    cat: 'Ecommerce · Pauta',
-    desc: 'Tienda de indumentaria femenina con catálogo completo, medios de pago integrados y campañas activas en Meta Ads. Desarrollamos la tienda en Tienda Negocio y gestionamos las campañas publicitarias para maximizar las ventas online.',
-    img: SUPABASE + '/portfolio_01.jpg',
-    tags: ['Tienda Negocio', 'Meta Ads', 'Catálogo Online', 'Medios de Pago'],
-    metrics: [
-      { num: 'Activo', label: 'Ecommerce' },
-      { num: 'Meta', label: 'Pauta activa' },
-      { num: '100%', label: 'Online' },
-    ],
-    link: 'https://vivagis.com'
-  },
-  {
-    title: 'Magnas',
-    cat: 'Ecommerce',
-    desc: 'Tienda de indumentaria femenina premium. Desarrollamos la tienda completa con catálogo extenso, integración de múltiples medios de pago y envíos a todo el país con hasta 3 cuotas sin interés.',
-    img: SUPABASE + '/portfolio_02.jpg',
-    tags: ['Tienda Negocio', 'Cuotas sin interés', 'Envíos', 'Catálogo'],
-    metrics: [
-      { num: 'Activo', label: 'Tienda online' },
-      { num: '3 cuotas', label: 'Sin interés' },
-      { num: 'Todo el país', label: 'Envíos' },
-    ],
-    link: 'https://magnas.com.ar'
-  },
-  {
-    title: 'Extreme Life',
-    cat: 'Ecommerce · Social Media',
-    desc: 'Tienda de moda urbana con gestión completa de redes sociales. Desarrollamos la tienda online y gestionamos el contenido estratégico en Instagram generando una comunidad activa y crecimiento orgánico sostenido.',
-    img: SUPABASE + '/portfolio_03.jpg',
-    tags: ['Tienda Negocio', 'Community Manager', 'Instagram', 'Contenido'],
-    metrics: [
-      { num: 'Activo', label: 'Ecommerce' },
-      { num: 'CM', label: 'Gestión activa' },
-      { num: 'Orgánico', label: 'Crecimiento' },
-    ],
-    link: 'https://extremelife.com.ar'
-  },
-  {
-    title: 'Tu marca acá',
-    cat: 'Tu negocio',
-    desc: '¿Querés que tu negocio aparezca en esta sección? Trabajemos juntos y construimos tu caso de éxito. Contanos tu proyecto y te armamos una propuesta a medida.',
-    img: SUPABASE + '/portfolio_04.jpg',
-    tags: ['Próximamente'],
-    metrics: [
-      { num: '?', label: 'Tu resultado' },
-      { num: '?', label: 'Tu crecimiento' },
-      { num: '?', label: 'Tu éxito' },
-    ],
-    link: 'index.html#contacto'
-  }
+  {title:'Gisary SA — Vivagis',cat:'Ecommerce · Pauta · SEO · CM',desc:'Marca mayorista de indumentaria sin presencia online. Implementamos tienda, pauta en Google Ads, Meta Ads y TikTok Ads, automatizaciones, CM y SEO. En el último mes alcanzaron un ROAS de x37 — crecimiento exponencial para una marca que nunca había operado digitalmente.',img:SUPABASE+'/portfolio_01.jpg',tags:['Google Ads','Meta Ads','TikTok Ads','SEO','Community Manager','Automatizaciones','Tienda Online'],metrics:[{num:'x37',label:'ROAS último mes'},{num:'7',label:'Servicios activos'},{num:'↑ Exp.',label:'Crecimiento'}],link:'https://vivagis.com'},
+  {title:'Extreme Life',cat:'Ecommerce · Meta Ads · CM',desc:'Marca de moda urbana y deportiva construida desde cero. Desarrollamos la tienda online, gestionamos Meta Ads y el community management. Proyecto integral con crecimiento sostenido en ventas y comunidad.',img:SUPABASE+'/portfolio_03.jpg',tags:['Meta Ads','Community Manager','Tienda Online','Instagram'],metrics:[{num:'0→',label:'Lanzamiento completo'},{num:'Meta Ads',label:'Pauta activa'},{num:'CM',label:'Gestión activa'}],link:'https://extremelife.com.ar'},
+  {title:'Magnas',cat:'Ecommerce · Meta Ads',desc:'Marca de indumentaria femenina premium. Tienda online con catálogo completo, múltiples medios de pago y envíos a todo el país. Campañas de Meta Ads para ventas sostenidas.',img:SUPABASE+'/portfolio_02.jpg',tags:['Meta Ads','Tienda Online','Catálogo','Envíos'],metrics:[{num:'Activo',label:'Ecommerce'},{num:'Meta Ads',label:'Pauta activa'},{num:'3 cuotas',label:'Sin interés'}],link:'https://magnas.com.ar'},
+  {title:'BellaSkin — Centro Estético',cat:'Landing Page · Meta Ads',desc:'Centro estético de CABA que necesitaba aumentar consultas online. Landing de alta conversión + Meta Ads segmentadas. Las consultas vía WhatsApp se triplicaron en el primer mes.',img:SUPABASE+'/portfolio_04.jpg',tags:['Landing Page','Meta Ads','WhatsApp','Leads'],metrics:[{num:'x3',label:'Consultas WhatsApp'},{num:'-45%',label:'Costo por lead'},{num:'Mes 1',label:'Resultados'}],link:null},
+  {title:'Norte Propiedades',cat:'Landing Page · Google Ads',desc:'Inmobiliaria del norte del GBA. Landing page profesional + Google Ads con segmentación geográfica precisa. ROI positivo desde la primera semana.',img:SUPABASE+'/portfolio_01.jpg',tags:['Landing Page','Google Ads','Leads','Real Estate'],metrics:[{num:'+180%',label:'Leads mensuales'},{num:'Sem. 1',label:'ROI positivo'},{num:'GBA Norte',label:'Segmentación'}],link:null},
+  {title:'FitZone Gym',cat:'Landing Page · Meta Ads · CM',desc:'Cadena de gimnasios que quería captar socios nuevos. Landing + Meta Ads con creatividades de alto impacto + community management activo en redes.',img:SUPABASE+'/portfolio_02.jpg',tags:['Meta Ads','Landing Page','CM','Formulario'],metrics:[{num:'+220',label:'Socios nuevos/mes'},{num:'x4.5',label:'ROAS'},{num:'CM',label:'Gestión activa'}],link:null},
+  {title:'Sabores del Fuego',cat:'Landing Page · Meta Ads',desc:'Restaurante de carnes en CABA. Landing premium con reservas integradas + Meta Ads geolocalizadas. Las reservas online crecieron un 300% en solo 60 días.',img:SUPABASE+'/portfolio_03.jpg',tags:['Landing Page','Meta Ads','Reservas Online','Local'],metrics:[{num:'+300%',label:'Reservas online'},{num:'60 días',label:'Para lograrlo'},{num:'CABA',label:'Geo targeting'}],link:null},
 ];
-
 // Nav scroll
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
