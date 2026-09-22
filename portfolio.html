@@ -262,6 +262,70 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
   .filter-btn{font-size:.82rem;padding:.45rem 1rem}
 }
 .pf-cta-card{cursor:default!important}.card-cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;padding:.6rem 1.3rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s}.card-cta-btn:hover{background:var(--accent2)}.card-cta-btn svg{width:14px;height:14px}
+
+/* ── HERO MEJORADO ── */
+.pf-hero{padding:140px 5% 90px;background:linear-gradient(160deg,#f0f6ff 0%,#ffffff 70%);position:relative;overflow:hidden;text-align:center}
+.hero-stats-row{display:flex;justify-content:center;gap:0;margin-top:3rem;animation:fadeInUp .9s .4s ease both;background:#fff;border:1px solid rgba(0,102,255,.1);border-radius:20px;padding:1.5rem 2rem;width:fit-content;margin-left:auto;margin-right:auto;box-shadow:0 4px 24px rgba(0,102,255,.07)}
+.hero-stat{text-align:center;padding:0 2.5rem}
+.hero-stat-num{font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);display:block;line-height:1}
+.hero-stat-label{font-size:.78rem;color:var(--muted);margin-top:.3rem;display:block}
+.hero-stat-divider{width:1px;height:40px;background:rgba(0,102,255,.12);flex-shrink:0;align-self:center}
+@media(max-width:600px){.hero-stats-row{flex-wrap:wrap;width:calc(100% - 2rem);padding:1rem}.hero-stat{width:50%;padding:.8rem 1rem}.hero-stat-divider{display:none}}
+
+/* ── FILTER MEJORADO ── */
+.filters-wrap{background:#fff;border-bottom:1px solid var(--border);padding:1.2rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:sticky;top:72px;z-index:50;backdrop-filter:blur(12px);background:rgba(255,255,255,.95)}
+.filters{padding:0;gap:.5rem}
+.pf-count{margin-bottom:0;font-size:.85rem}
+
+/* ── CARD THUMBNAIL GRADIENTS ── */
+.thumb-unsplash{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pf-card:hover .thumb-unsplash{transform:scale(1.05)}
+
+/* ── MODAL MEJORADO ── */
+.modal-body h2{font-size:1.6rem;margin-bottom:.5rem}
+.modal-subtitle{color:var(--accent);font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.modal-subtitle svg{width:11px;height:11px}
+.modal-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.5rem}
+.modal-metric-card{background:var(--bg2);border-radius:12px;padding:1.2rem;text-align:center;border:1px solid var(--border)}
+.modal-metric-num{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent);display:block;line-height:1}
+.modal-metric-label{font-size:.75rem;color:var(--muted);margin-top:.3rem;display:block}
+.modal-section-title{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.modal-section-title svg{width:11px;height:11px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.modal-tag{font-size:.78rem;padding:.28rem .85rem;border-radius:50px;background:rgba(0,102,255,.07);border:1px solid rgba(0,102,255,.15);color:var(--accent);font-weight:600}
+.modal-fictional-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,166,0,.08);border:1px solid rgba(255,166,0,.2);border-radius:50px;padding:.3rem .9rem;font-size:.72rem;font-weight:600;color:#b45309;margin-bottom:1rem}
+.modal-fictional-badge svg{width:11px;height:11px}
+.modal-actions{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.modal-link{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.75rem 1.6rem;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.modal-link:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,102,255,.35)}
+.modal-link svg{width:14px;height:14px}
+.modal-link-secondary{display:inline-flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.85rem;font-weight:500;text-decoration:none}
+.modal-link-secondary:hover{color:var(--accent)}
+
+/* ── FOOTER COMPLETO ── */
+.pf-footer-full{padding:60px 5% 30px;background:var(--dark)}
+.pf-ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.pf-ft-brand p{color:rgba(255,255,255,.5);font-size:.9rem;margin-top:.8rem;max-width:260px;line-height:1.7}
+.pf-ft-col h5{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.pf-ft-col ul{list-style:none}
+.pf-ft-col ul li{margin-bottom:.6rem}
+.pf-ft-col ul a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.9rem;transition:color .2s;display:flex;align-items:center;gap:.45rem}
+.pf-ft-col ul a:hover{color:#4d9fff}
+.pf-ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.pf-ft-bottom p{color:rgba(255,255,255,.35);font-size:.85rem}
+.pf-socials{display:flex;gap:.75rem}
+.pf-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;color:rgba(255,255,255,.4);transition:border-color .2s,color .2s,transform .2s}
+.pf-soc svg{width:16px;height:16px;stroke-width:1.8}
+.pf-soc:hover{border-color:#4d9fff;color:#4d9fff;transform:translateY(-2px)}
+@media(max-width:900px){.pf-ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pf-ft-grid{grid-template-columns:1fr}.pf-ft-bottom{flex-direction:column;text-align:center}.pf-socials{justify-content:center}}
+
+/* ── CTA CARD ── */
+.pf-cta-card{cursor:default!important}
+.card-cta-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--accent);color:#fff;padding:.6rem 1.3rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s}
+.card-cta-btn:hover{background:var(--accent2)}
+.card-cta-btn svg{width:14px;height:14px}
+
 </style>
 </head>
 <body>
@@ -295,35 +359,66 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
       Casos de éxito
     </div>
-    <h1>Resultados que <em>hablan</em></h1>
-    <p>Cada proyecto es una historia de crecimiento. Conocé el trabajo que hicimos para nuestros clientes.</p>
+    <h1>Resultados que <em>hablan</em><br>por sí solos</h1>
+    <p>Cada proyecto es una historia de crecimiento real. Conocé el trabajo concreto que hacemos para nuestros clientes.</p>
+    <div class="hero-stats-row">
+      <div class="hero-stat">
+        <span class="hero-stat-num">+15</span>
+        <span class="hero-stat-label">Clientes activos</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">x37</span>
+        <span class="hero-stat-label">ROAS récord logrado</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">7+</span>
+        <span class="hero-stat-label">Rubros trabajados</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Proyectos entregados</span>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- FILTERS -->
-<div class="filters reveal">
-  <button class="filter-btn active" onclick="filterCards('all')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-    Todos
-  </button>
-  <button class="filter-btn" onclick="filterCards('ecommerce')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-    Ecommerce
-  </button>
-  <button class="filter-btn" onclick="filterCards('pauta')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-    Pauta
-  </button>
-  <button class="filter-btn" onclick="filterCards('social')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-    Social Media
-  </button>
+<div class="filters-wrap">
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterCards('all',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Todos
+    </button>
+    <button class="filter-btn" onclick="filterCards('ecommerce',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Ecommerce
+    </button>
+    <button class="filter-btn" onclick="filterCards('pauta',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Pauta
+    </button>
+    <button class="filter-btn" onclick="filterCards('landing',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      Landing Pages
+    </button>
+    <button class="filter-btn" onclick="filterCards('cm',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Social Media
+    </button>
+    <button class="filter-btn" onclick="filterCards('seo',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      SEO
+    </button>
+  </div>
+  <p class="pf-count">Mostrando <span id="countNum">7</span> proyectos</p>
 </div>
 
 <!-- GRID -->
 <div class="pf-section">
-  <p class="pf-count reveal">Mostrando <span id="countNum">7</span> proyectos</p>
-  <div class="pf-grid" id="pfGrid">
+<div class="pf-grid" id="pfGrid">
 
         <!-- CARD 1 -->
     <div class="pf-card reveal" data-category="ecommerce pauta seo cm" onclick="openModal(0)">
@@ -388,7 +483,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
     <!-- CARD 4 -->
     <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(3)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_04.jpg" data-flexible alt="BellaSkin — Centro Estético" onerror="this.style.display='none'">
+        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80" alt="BellaSkin — Centro Estético" onerror="this.style.display='none'">
         <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
         <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads</div>
@@ -407,7 +502,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
     <!-- CARD 5 -->
     <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(4)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_01.jpg" data-flexible alt="Norte Propiedades" onerror="this.style.display='none'">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Norte Propiedades" onerror="this.style.display='none'">
         <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
         <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Google Ads</div>
@@ -426,7 +521,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
     <!-- CARD 6 -->
     <div class="pf-card reveal" data-category="landing pauta cm" onclick="openModal(5)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_02.jpg" data-flexible alt="FitZone Gym" onerror="this.style.display='none'">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="FitZone Gym" onerror="this.style.display='none'">
         <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
         <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads · CM</div>
@@ -445,7 +540,7 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
     <!-- CARD 7 -->
     <div class="pf-card reveal" data-category="landing pauta" onclick="openModal(6)">
       <div class="card-thumb">
-        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/portfolio_03.jpg" data-flexible alt="Sabores del Fuego" onerror="this.style.display='none'">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Sabores del Fuego" onerror="this.style.display='none'">
         <div class="thumb-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <div class="card-overlay"><div class="card-overlay-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Ver detalle</div></div>
         <div class="card-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Landing Page · Meta Ads</div>
@@ -479,15 +574,77 @@ const SUPABASE = 'https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/pub
 
 // Projects data
 const projects = [
-  {title:'Gisary SA — Vivagis',cat:'Ecommerce · Pauta · SEO · CM',desc:'Marca mayorista de indumentaria sin presencia online. Implementamos tienda, pauta en Google Ads, Meta Ads y TikTok Ads, automatizaciones, CM y SEO. En el último mes alcanzaron un ROAS de x37 — crecimiento exponencial para una marca que nunca había operado digitalmente.',img:SUPABASE+'/portfolio_01.jpg',tags:['Google Ads','Meta Ads','TikTok Ads','SEO','Community Manager','Automatizaciones','Tienda Online'],metrics:[{num:'x37',label:'ROAS último mes'},{num:'7',label:'Servicios activos'},{num:'↑ Exp.',label:'Crecimiento'}],link:'https://vivagis.com'},
-  {title:'Extreme Life',cat:'Ecommerce · Meta Ads · CM',desc:'Marca de moda urbana y deportiva construida desde cero. Desarrollamos la tienda online, gestionamos Meta Ads y el community management. Proyecto integral con crecimiento sostenido en ventas y comunidad.',img:SUPABASE+'/portfolio_03.jpg',tags:['Meta Ads','Community Manager','Tienda Online','Instagram'],metrics:[{num:'0→',label:'Lanzamiento completo'},{num:'Meta Ads',label:'Pauta activa'},{num:'CM',label:'Gestión activa'}],link:'https://extremelife.com.ar'},
-  {title:'Magnas',cat:'Ecommerce · Meta Ads',desc:'Marca de indumentaria femenina premium. Tienda online con catálogo completo, múltiples medios de pago y envíos a todo el país. Campañas de Meta Ads para ventas sostenidas.',img:SUPABASE+'/portfolio_02.jpg',tags:['Meta Ads','Tienda Online','Catálogo','Envíos'],metrics:[{num:'Activo',label:'Ecommerce'},{num:'Meta Ads',label:'Pauta activa'},{num:'3 cuotas',label:'Sin interés'}],link:'https://magnas.com.ar'},
-  {title:'BellaSkin — Centro Estético',cat:'Landing Page · Meta Ads',desc:'Centro estético de CABA que necesitaba aumentar consultas online. Landing de alta conversión + Meta Ads segmentadas. Las consultas vía WhatsApp se triplicaron en el primer mes.',img:SUPABASE+'/portfolio_04.jpg',tags:['Landing Page','Meta Ads','WhatsApp','Leads'],metrics:[{num:'x3',label:'Consultas WhatsApp'},{num:'-45%',label:'Costo por lead'},{num:'Mes 1',label:'Resultados'}],link:null},
-  {title:'Norte Propiedades',cat:'Landing Page · Google Ads',desc:'Inmobiliaria del norte del GBA. Landing page profesional + Google Ads con segmentación geográfica precisa. ROI positivo desde la primera semana.',img:SUPABASE+'/portfolio_01.jpg',tags:['Landing Page','Google Ads','Leads','Real Estate'],metrics:[{num:'+180%',label:'Leads mensuales'},{num:'Sem. 1',label:'ROI positivo'},{num:'GBA Norte',label:'Segmentación'}],link:null},
-  {title:'FitZone Gym',cat:'Landing Page · Meta Ads · CM',desc:'Cadena de gimnasios que quería captar socios nuevos. Landing + Meta Ads con creatividades de alto impacto + community management activo en redes.',img:SUPABASE+'/portfolio_02.jpg',tags:['Meta Ads','Landing Page','CM','Formulario'],metrics:[{num:'+220',label:'Socios nuevos/mes'},{num:'x4.5',label:'ROAS'},{num:'CM',label:'Gestión activa'}],link:null},
-  {title:'Sabores del Fuego',cat:'Landing Page · Meta Ads',desc:'Restaurante de carnes en CABA. Landing premium con reservas integradas + Meta Ads geolocalizadas. Las reservas online crecieron un 300% en solo 60 días.',img:SUPABASE+'/portfolio_03.jpg',tags:['Landing Page','Meta Ads','Reservas Online','Local'],metrics:[{num:'+300%',label:'Reservas online'},{num:'60 días',label:'Para lograrlo'},{num:'CABA',label:'Geo targeting'}],link:null},
-];
-// Nav scroll
+  {
+    title:'Gisary SA — Vivagis',
+    cat:'Ecommerce · Pauta · SEO · CM',
+    fictional:false,
+    desc:'Gisary SA es una marca mayorista de indumentaria femenina que llegó a Fyronet sin ninguna presencia digital. Construimos su ecosistema online desde cero: tienda en Tienda Negocio, campañas en Google Ads, Meta Ads y TikTok Ads, automatizaciones de marketing, community management y SEO. En el último mes superaron todas las expectativas con un ROAS de x37, consolidándose como un caso de crecimiento exponencial real.',
+    img:SUPABASE+'/portfolio_01.jpg',
+    tags:['Google Ads','Meta Ads','TikTok Ads','SEO','Community Manager','Automatizaciones','Tienda Online'],
+    metrics:[{num:'x37',label:'ROAS último mes'},{num:'7',label:'Servicios activos'},{num:'↑ Exp.',label:'Crecimiento'}],
+    link:'https://vivagis.com'
+  },
+  {
+    title:'Extreme Life',
+    cat:'Ecommerce · Meta Ads · CM',
+    fictional:false,
+    desc:'Marca de moda urbana y deportiva construida desde cero por Fyronet. Desarrollamos su tienda online completa, gestionamos las campañas de Meta Ads con creatividades propias y el community management de sus redes sociales. Un proyecto integral que hoy tiene comunidad activa y ventas sostenidas.',
+    img:SUPABASE+'/portfolio_03.jpg',
+    tags:['Meta Ads','Community Manager','Tienda Online','Instagram','Contenido'],
+    metrics:[{num:'0→',label:'Lanzamiento completo'},{num:'Meta Ads',label:'Pauta activa'},{num:'CM',label:'Gestión activa'}],
+    link:'https://extremelife.com.ar'
+  },
+  {
+    title:'Magnas',
+    cat:'Ecommerce · Meta Ads',
+    fictional:false,
+    desc:'Marca de indumentaria femenina premium. Desarrollamos su tienda online con catálogo completo, integración de múltiples medios de pago y logística de envíos a todo el país. Gestionamos campañas de Meta Ads para ventas sostenidas con hasta 3 cuotas sin interés.',
+    img:SUPABASE+'/portfolio_02.jpg',
+    tags:['Meta Ads','Tienda Online','Catálogo','Envíos','Cuotas sin interés'],
+    metrics:[{num:'Activo',label:'Ecommerce'},{num:'Meta Ads',label:'Pauta activa'},{num:'3 cuotas',label:'Sin interés'}],
+    link:'https://magnas.com.ar'
+  },
+  {
+    title:'BellaSkin — Centro Estético',
+    cat:'Landing Page · Meta Ads',
+    fictional:true,
+    desc:'Centro estético de CABA que necesitaba aumentar sus consultas online. Desarrollamos una landing page de alta conversión con formulario de WhatsApp directo y gestionamos campañas de Meta Ads segmentadas por zona geográfica e intereses. Las consultas vía WhatsApp se triplicaron en el primer mes.',
+    img:'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80',
+    tags:['Landing Page','Meta Ads','WhatsApp','Leads','Geolocalización'],
+    metrics:[{num:'x3',label:'Consultas WhatsApp'},{num:'-45%',label:'Costo por lead'},{num:'Mes 1',label:'Resultados'}],
+    link:null
+  },
+  {
+    title:'Norte Propiedades',
+    cat:'Landing Page · Google Ads',
+    fictional:true,
+    desc:'Inmobiliaria del norte del GBA que buscaba captar más leads de compradores y vendedores online. Desarrollamos una landing page profesional orientada a conversión y gestionamos campañas de Google Ads con segmentación geográfica precisa. ROI positivo desde la primera semana de campaña.',
+    img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80',
+    tags:['Landing Page','Google Ads','Leads','Real Estate','Segmentación GBA'],
+    metrics:[{num:'+180%',label:'Leads mensuales'},{num:'Sem. 1',label:'ROI positivo'},{num:'GBA Norte',label:'Segmentación'}],
+    link:null
+  },
+  {
+    title:'FitZone Gym',
+    cat:'Landing Page · Meta Ads · CM',
+    fictional:true,
+    desc:'Cadena de gimnasios que quería captar socios nuevos con campañas digitales. Desarrollamos una landing page con formulario de prueba gratuita, gestionamos Meta Ads con creatividades de video de alto impacto y el community management activo de sus redes. Resultados sostenidos mes a mes.',
+    img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80',
+    tags:['Meta Ads','Landing Page','CM','Formulario','Video Ads'],
+    metrics:[{num:'+220',label:'Socios nuevos/mes'},{num:'x4.5',label:'ROAS'},{num:'CM',label:'Gestión activa'}],
+    link:null
+  },
+  {
+    title:'Sabores del Fuego',
+    cat:'Landing Page · Meta Ads',
+    fictional:true,
+    desc:'Restaurante de carnes premium en CABA. Desarrollamos una landing page con sistema de reservas integrado, galería de platos y menú digital. Gestionamos campañas de Meta Ads geolocalizadas en un radio de 10km. Las reservas online crecieron un 300% en solo 60 días desde el lanzamiento.',
+    img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
+    tags:['Landing Page','Meta Ads','Reservas Online','Local','Geo targeting'],
+    metrics:[{num:'+300%',label:'Reservas online'},{num:'60 días',label:'Para lograrlo'},{num:'CABA',label:'Geo targeting'}],
+    link:null
+  },
+];// Nav scroll
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
 
@@ -503,9 +660,9 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // Filter
-function filterCards(cat) {
+function filterCards(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.closest('.filter-btn').classList.add('active');
+  if(btn) btn.classList.add('active');
 
   const cards = document.querySelectorAll('.pf-card');
   let visible = 0;
@@ -540,7 +697,14 @@ function openModal(idx) {
 
   document.getElementById('modalTitle').textContent = p.title;
   document.getElementById('modalDesc').textContent = p.desc;
-  document.getElementById('modalCat').textContent = p.cat;
+
+  // Fictional badge
+  const fictBadge = document.getElementById('modalFictionalBadge');
+  if(fictBadge) fictBadge.style.display = p.fictional ? 'inline-flex' : 'none';
+
+  // Category
+  const catEl = document.getElementById('modalCat');
+  if(catEl) catEl.textContent = p.cat;
 
   // Image
   const img = document.getElementById('modalImg');
@@ -548,10 +712,7 @@ function openModal(idx) {
   img.src = p.img;
   img.style.display = 'block';
   placeholder.style.display = 'none';
-  img.onerror = function() {
-    this.style.display = 'none';
-    placeholder.style.display = 'flex';
-  };
+  img.onerror = function() { this.style.display='none'; placeholder.style.display='flex'; };
 
   // Metrics
   const metricsEl = document.getElementById('modalMetrics');
@@ -567,7 +728,14 @@ function openModal(idx) {
   tagsEl.innerHTML = p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
 
   // Link
-  document.getElementById('modalLink').href = p.link;
+  const linkEl = document.getElementById('modalLink');
+  const linkWrap = document.getElementById('modalLinkWrap');
+  if(p.link) {
+    linkEl.href = p.link;
+    if(linkWrap) linkWrap.style.display = 'flex';
+  } else {
+    if(linkWrap) linkWrap.style.display = 'none';
+  }
 
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -599,3 +767,98 @@ document.querySelectorAll('img[data-flexible]').forEach(function(img) {
 </script>
 </body>
 </html>
+<!-- CTA BAND -->
+<div class="pf-cta reveal">
+  <span class="slabel" style="color:#4d9fff">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+    ¿Listo para crecer?
+  </span>
+  <h2>Tu negocio podría ser el <em>próximo caso</em></h2>
+  <p>Trabajamos con un número limitado de clientes por mes para garantizar dedicación total a cada proyecto.</p>
+  <a href="index.html#contacto" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 30px rgba(0,102,255,.4)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    Quiero mi asesoría gratuita
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- FOOTER COMPLETO -->
+<footer class="pf-footer-full">
+  <div class="pf-ft-grid">
+    <div class="pf-ft-brand">
+      <a href="index.html" style="display:inline-flex;align-items:center;gap:.4rem;text-decoration:none">
+        <img src="https://kogutxfhfluvdcvmoagn.supabase.co/storage/v1/object/public/Images/logo_completo.png" alt="Fyronet" style="height:32px;width:auto;filter:brightness(0) invert(1)" onerror="this.style.display='none'">
+      </a>
+      <p>Agencia de marketing digital especializada en pauta, diseño web y estrategia para negocios que quieren crecer en serio.</p>
+    </div>
+    <div class="pf-ft-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="index.html#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Pauta Publicitaria</a></li>
+        <li><a href="index.html#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Diseño Web</a></li>
+        <li><a href="index.html#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Tiendas Online</a></li>
+        <li><a href="index.html#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Community Manager</a></li>
+        <li><a href="index.html#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>SEO</a></li>
+      </ul>
+    </div>
+    <div class="pf-ft-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="https://wa.me/5491163596107"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>WhatsApp</a></li>
+        <li><a href="mailto:info@fyronet.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>info@fyronet.com</a></li>
+        <li><a href="https://instagram.com/fyronet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
+        <li><a href="https://linkedin.com/company/fyronet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf-ft-bottom">
+    <p>© 2025 Fyronet · fyronet.com · Buenos Aires, Argentina</p>
+    <div class="pf-socials">
+      <a href="https://instagram.com/fyronet" class="pf-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://wa.me/5491163596107" class="pf-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></a>
+      <a href="https://linkedin.com/company/fyronet" class="pf-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://facebook.com/fyronet" class="pf-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+    </div>
+  </div>
+</footer>
+</html<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-thumb" id="modalThumb">
+      <div class="thumb-placeholder" id="modalPlaceholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </div>
+      <img id="modalImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;display:none">
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-cat" id="modalCat"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-fictional-badge" id="modalFictionalBadge" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Caso ilustrativo — resultados reales de proyectos similares
+      </div>
+      <h2 id="modalTitle"></h2>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Resultados
+      </div>
+      <div class="modal-metrics" id="modalMetrics"></div>
+      <div class="modal-section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Servicios utilizados
+      </div>
+      <div class="modal-tags" id="modalTags"></div>
+      <div class="modal-actions" id="modalLinkWrap" style="display:flex">
+        <a href="#" id="modalLink" class="modal-link" target="_blank">
+          Visitar sitio web
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="index.html#contacto" class="modal-link-secondary">
+          ¿Querés resultados similares? →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>>
